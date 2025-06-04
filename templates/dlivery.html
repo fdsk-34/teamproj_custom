@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배송현황 | 수제커피브루</title>
+    <link rel="stylesheet" href="../static/css/dlivery.css">
+        <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/header.css">
+
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <style>
+      
+    </style>
+</head>
+<body>
+    <header>
+         <h1><img src="../img/K-038.png"> 이른 아침</h1>
+        <nav>
+            <a href="./index.html">홈</a>
+            <a href="./submenu.html">메뉴</a>
+            <a href="./findstore.html">매장 찾기</a>
+            <a href="./board.html" >자유 게시판</a>
+        </nav>
+        <nav>
+            <a href="./login.html">로그인</a>
+            <a href="./join_page.html">회원 가입</a>
+            <a href="./dlivery.html" class="active">배송현황</a>
+            <a href="./order_tracking.html">주문조회</a>
+            <a href="./order_cart.html" >장바구니🛒</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 style="color: #2d4739; margin-bottom: 20px;">배송현황 조회</h2>
+        <div class="search-box">
+            <div class="input-group">
+                <input type="text" id="order-id" placeholder="주문 번호를 입력하세요 (예: ORD123456789,ORD987654321)">
+                <select id="search-history" onchange="selectSearchHistory()">
+                    <option value="">최근 조회 기록</option>
+                </select>
+                <select id="sort-order">
+                    <option value="latest">최신순</option>
+                    <option value="total-asc">총액 낮은순</option>
+                    <option value="total-desc">총액 높은순</option>
+                </select>
+                <select id="status-filter">
+                    <option value="" selected>전체</option>
+                    <option value="주문 접수">주문 접수</option>
+                    <option value="배송 준비">배송 준비</option>
+                    <option value="배송 중">배송 중</option>
+                    <option value="완료">완료</option>
+                    <option value="취소됨">취소됨</option>
+                </select>
+                <div class="btn-group">
+                    <button class="btn" onclick="trackOrder()">조회</button>
+                    <button class="btn" onclick="resetSearch()">취소</button>
+                    <button class="btn" onclick="clearSearchHistory()">조회 기록 삭제</button>
+                </div>
+            </div>
+            <span class="error" id="order-id-error"></span>
+            <div class="image-container">
+                <!-- 이미지 삽입 공간 -->
+                
+                <p>이미지 삽입 공간</p>
+            </div>
+        </div>
+        <div class="no-order" id="no-order">
+            <p>조회된 주문이 없습니다.</p>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="modal-overlay" onclick="closeOrderPanel()"></div>
+    <div class="order-details-panel" id="order-details-panel">
+        <select id="order-select" onchange="displayOrderDetails(this.value)">
+            <option value="">주문을 선택하세요</option>
+        </select>
+        <div id="order-details-content"></div>
+    </div>
+    <div class="sidebar-panel" id="cancel-panel">
+        <div class="sidebar-panel-content">
+            <p id="cancel-message"></p>
+            <div class="btn-group">
+                <button class="btn" onclick="confirmCancel()">확인</button>
+                <button class="btn" onclick="closeCancelPanel()">취소</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 수제커피브루 | 경기도 커피시 향기구 아라비카로 100
+    </footer>
+
+    <script src="../static/js/dilvery.js">
+        
+    </script>
+</body>
+</html>

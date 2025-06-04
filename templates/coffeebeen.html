@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메뉴 | 수제커피브루</title>
+    <link rel="stylesheet" href="../static/css/coffeebeen.css">
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/header.css">
+
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- 옵션 모달 -->
+    <div class="modal" id="add-to-cart-modal">
+        <div class="modal-content">
+            <h3 id="modal-item-name"></h3>
+            <p>가격: ₩<span id="modal-item-price"></span></p>
+
+            <div class="form-group">
+                <label>온도:</label>
+                <div class="radio-group">
+                    <label>hot<input type="radio" name="temp" value="hot" checked> </label>
+                    <label>ice<input type="radio" name="temp" value="ice"></label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>샷 추가 (+₩500):</label>
+                <input type="checkbox" id="extra-shot">
+            </div>
+
+            <div class="form-group syrup-quantity-group">
+                <label for="syrup">시럽 선택:</label>
+                <select id="syrup">
+                    <option value="none">없음</option>
+                    <option value="coffee">커피 시럽</option>
+                    <option value="strawberry">딸기 시럽</option>
+                    <option value="choco">초코 시럽</option>
+                    <option value="mango">망고 시럽</option>
+                    <option value="grapefruit">자몽 시럽</option>
+                    <option value="blueberry">블루베리 시럽</option>
+                </select>
+
+                <label for="quantity">수량:</label>
+                <input type="number" id="quantity" min="1" value="1">
+            </div>
+
+            <div class="button-group">
+                <button onclick="addToCart()">추가</button>
+                <button onclick="closeAddToCartModal()">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 장바구니 모달 -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <h3>장바구니</h3>
+            <div id="cart-items"></div>
+            <div>총액: ₩<span id="cart-total">0</span></div>
+            <button type="button" onclick="checkout()">결제하기</button>
+            <button type="button" onclick="clearCart()">전체 취소</button>
+            <button type="button" onclick="closeCartModal()">닫기</button>
+        </div>
+    </div>
+
+    <!-- 결제 모달 -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <h3>결제하기</h3>
+            <label>이름: <input type="text" id="checkout-name"></label>
+            <label>연락처: <input type="text" id="checkout-phone"></label>
+            <label>주소: <input type="text" id="checkout-address"></label>
+            <label>결제 수단:
+                <select id="checkout-payment">
+                    <option value="card">카드</option>
+                    <option value="mobile">모바일결제</option>
+                </select>
+            </label>
+            <button onclick="submitOrder()">결제 완료</button>
+            <button onclick="closeCheckoutModal()">닫기</button>
+        </div>
+    </div>
+
+
+
+    <header>
+        <h1><img src="../img/K-038.png"> 이른 아침</h1>
+        <nav>
+            <a href="./index.html">홈</a>
+            <a href="./submenu.html" class="active">메뉴</a>
+            <a href="./findstore.html">매장 찾기</a>
+            <a href="./board.html">자유 게시판</a>
+        </nav>
+        <nav>
+            <a href="./login.html">로그인</a>
+            <a href="./join_page.html">회원 가입</a>
+            <a href="./dlivery.html">배송현황</a>
+            <a href="./order_tracking.html">주문조회</a>
+            <a href="#" onclick="openCartModal()">장바구니🛒</a>
+        </nav>
+    </header>
+
+    <div class="menu-container">
+        <h2 class="menu-title">우리의 신상 커피 원두 메뉴</h2>
+        <div class="menu-grid">
+            <div class="menu-card" onclick="openAddToCartModal('bella donovan', 4000)">
+                <img src="../img/K-009.jpg" alt="bella donovan">
+                <div class="menu-card-content">
+                    <h3>bella donovan</h3>
+                    <p>roasting : 미디엄</p>
+                    <p>flavorNotes = 딸기, 밀크초콜릿, 몰트</p>
+                    <p>characteristics = </p>
+                    <p> 에티오피아와 수마트라 블렌드 , 밸런스 좋아서 핸드드립, 브루잉용으로 인기 많아요</p>
+                    <p><strong>₩4,000</strong></p>
+                    <div class="icon-container">
+
+                        <img class="new" src="../img/good_icon_new.gif" alt="신상 아이콘">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="menu-card" onclick="openAddToCartModal('colombia finca el paraiso', 4500)">
+                <img src="../img/K-010.jpg" alt="colombia finca el paraiso">
+                <div class="menu-card-content">
+                    <h3>colombia finca el paraiso</h3>
+                    <p>roasting : 라이트</p>
+                    <p>flavorNotes = 자몽, 장미, 복숭아</p>
+                    <p>characteristics = </p>
+                    <p></p>
+                    <p>
+                    <p>꽃향기가 도는 산미와 과일향의 조화,<br> 힙스터 감성 뿜뿜<br>
+                    <p><strong>₩4,500</strong></p>
+                    <div class="icon-container">
+                        <img class="new" src="../img/good_icon_new.gif" alt="신상 아이콘">
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" onclick="openAddToCartModal('honduras el puente', 5000)">
+                <img src="../img/K-020.jpg" alt="honduras el puente">
+                <div class="menu-card-content">
+                    <h3>honduras el puente</h3>
+                    <p>roasting : 라이트</p>
+                    <p>flavorNotes = 청사과, 설탕시럽, 은은한 향신료</p>
+                    <p>characteristics = </p>
+                    <p></p>
+                    <p>덴마크 대표 미니멀 감성 로스터리,
+                    <p>맛도 미니멀하게 깔끔</p>
+                    <p><strong>₩5,000</strong></p>
+                    <div class="icon-container">
+                        <img class="new" src="../img/good_icon_new.gif" alt="신상 아이콘">
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card" onclick="openAddToCartModal('cup of excellence', 6000)">
+                <img src="../img/K-021.jpg" alt="cup of excellence">
+                <div class="menu-card-content">
+                    <h3>cup of excellence</h3>
+                    <p>roasting : 라이트</p>
+                    <p>flavorNotes = 열대과일, 재스민, 청포도</p>
+                    <p>characteristics = </p>
+                    <p></p>
+                    <p>COE(컵오브 엑셀렌스)수상작
+                    <p>품질부터 다른 산미풍 커피의 정점</p>
+                    <p><strong>₩6,000</strong></p>
+                    <div class="icon-container">
+                        <img class="new" src="../img/good_icon_new.gif" alt="신상 아이콘">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <h2 class="menu-title">시즌 기념 한정 커피 원두</h2>
+        <div class="menu-grid">
+            <div class="menu-card2" onclick="openAddToCartModal('el paraiso double anaerobic washed', 7000)">
+                <img src="../img/K-022.jpg" alt="el paraiso double anaerobic washed">
+                <div class="menu-card-content">
+                    <h3>el paraiso double anaerobic washed</h3>
+                    <p>roasting : 라이트</p>
+                    <p>flavorNotes = 딸기 요구르트,장미,열대과일</p>
+                    <p>characteristics = </p>
+                    <p></p>
+                    <p>향미가 미쳤어요,실험적이고 독보적적
+                    <p></p>
+                    <p><strong>₩7,000</strong></p>
+                    <div class="icon-container">
+                        <img class="popular" src="../img/good_icon_popular.gif" alt="인기 아이콘">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="menu-card2" onclick="openAddToCartModal('ethiopia yirgacheffe', 7500)">
+                <img src="../img/K-023.jpg" alt="ethiopia yirgacheffe">
+                <div class="menu-card-content">
+                    <h3>ethiopia yirgacheffe</h3>
+                    <p>roasting : 없음</p>
+                    <p>flavorNotes = 레몬,베리류,꽃향기,복숭아</p>
+                    <p>characteristics = </p>
+                    <p></p>
+                    <p>예가체프는 에티오피아의 대표적 커피재배지역으로,
+                    <p>과일향이 두드러지는 커피로 유명합니다</p>
+                    <p><strong>₩7,500</strong></p>
+                     <div class="icon-container">
+                        <img class="popular" src="../img/good_icon_popular.gif" alt="인기 아이콘">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="menu-card2" onclick="openAddToCartModal('kenya aa', 6000)">
+                <img src="../img/K-024.jpg" alt="kenya aa">
+                <div class="menu-card-content">
+                    <h3>kenya aa</h3>
+                    <p>roasting : 없음</p>
+                    <p>flavorNotes = 블랙베리, 자몽, 시트러스스</p>
+                    <p>characteristics = </p>
+                    <p></p>
+                    <p>높은 고도에서 자란 아라비카 커피로 유명하며,
+                    <p>뛰어난 과일향과 풍부한 산미를 자랑합니다.</p>
+                    <p><strong>₩6,000</strong></p>
+                     <div class="icon-container">
+                        <img class="popular" src="../img/good_icon_popular.gif" alt="인기 아이콘">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="menu-card2" onclick="openAddToCartModal('brazil santos', 6000)">
+                <img src="../img/K-025.jpg" alt="brazil santos">
+                <div class="menu-card-content">
+                    <h3>brazil santos</h3>
+                    <p>roasting : 없음</p>
+                    <p>flavorNotes = 초콜릿, 캐러맬, 견과류</p>
+                    <p>characteristics = </p>
+                    <p></p>
+                    <p>부드럽고 균형잡힌 맛이 특징으로
+                    <p>우유와 잘 어울립니다</p>
+                    <p><strong>₩6,000</strong></p>
+                     <div class="icon-container">
+                        <img class="popular" src="../img/good_icon_popular.gif" alt="인기 아이콘">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="menu-card2" onclick="openAddToCartModal('colombia supremo', 6000)">
+                <img src="../img/K-026.jpg" alt="colombia supremo">
+                <div class="menu-card-content">
+                    <h3>colombia supremo</h3>
+                    <p>roasting : 없음</p>
+                    <p>flavorNotes = 사과, 캐러멜,초콜릿, 약간의 견과류 향</p>
+                    <p>characteristics = </p>
+                    <p></p>
+                    <p>부드럽고 균형잡힌 맛으로 유명하며
+                    <p>우유와 함께 할때 맛이 더 부각됩니다.</p>
+                    <p><strong>₩6,000</strong></p>
+                     <div class="icon-container">
+                        <img class="popular" src="../img/good_icon_popular.gif" alt="인기 아이콘">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="menu-card2" onclick="openAddToCartModal('ethiopia yirgacheffe_washed', 8000)">
+                <img src="../img/K-027.jpg" alt="ethiopia yirgacheffe washed">
+                <div class="menu-card-content">
+                    <h3>ethiopia yirgacheffe washed</h3>
+                    <p>roasting : 없음</p>
+                    <p>flavorNotes = 재스민 꽃향기,레몬,베리류,복숭아</p>
+                    <p>characteristics = </p>
+                    <p></p>
+                    <p>핸드드립에 가장 잘맞는 고급 원두 중 하나로,
+                    <p>특유의 밝은 산미와 꽃향기가 인상적</p>
+                    <p><strong>₩8,000</strong></p>
+                     <div class="icon-container">
+                        <img class="popular" src="../img/good_icon_popular.gif" alt="인기 아이콘">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="menu-card2" onclick="openAddToCartModal('로브스타', 6000)">
+                <img src="../img/K-028.jpg" alt="로브스타">
+                <div class="menu-card-content">
+                    <h3>로브스타</h3>
+                    <p>roasting : 미디엄 다크</p>
+                    <p>flavorNotes = 다크초콜릿, 너트, 카라멜</p>
+                    <p>characteristics = </p>
+                    <p></p>
+                    <p>묵직한 바디감과 은은한 스모키함 ,
+                    <p>라떼 용으로도 인기 </p>
+                    <p><strong>₩6,000</strong></p>
+                     <div class="icon-container">
+                        <img class="popular" src="../img/good_icon_popular.gif" alt="인기 아이콘">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="menu-card2" onclick="openAddToCartModal('이른 아침 시그니처', 10000)">
+                <img src="../img/K-011.jpg" alt="이른 아침 시그니처">
+                <div class="menu-card-content">
+                    <h3>이른 아침 시그니처</h3>
+                    <p>roasting : 미디엄 라이트</p>
+                    <p>flavorNotes = 너트, 꽃향기, 초콜릿</p>
+                    <p>characteristics = </p>
+                    <p></p>
+                    <p>이른 아침이 자신있게 내놓은
+                    <p>깊은 산미와 꽃향기로 아침을 깨우는 커피</p>
+                    <p><strong>₩10,000</strong></p>
+                     <div class="icon-container">
+                         <img class="new" src="../img/good_icon_new.gif" alt="신상 아이콘">
+                        <img class="popular" src="../img/good_icon_popular.gif" alt="인기 아이콘">
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 수제커피브루 | 경기도 커피시 향기구 아라비카로 100
+    </footer>
+
+    <script src="../static/js/coffeebeen.js"></script>
+</body>
+
+</html>

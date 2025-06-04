@@ -1,0 +1,244 @@
+  body {
+            margin: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #fff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #2d4739;
+            color: white;
+            padding: 0px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        main {
+            flex: 1;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+
+        }
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #719CED;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 0.8rem;
+        }
+        .notice-box {                       
+              width: 600px;
+            height: 500px;
+            background-color: #fdfcf7;
+            padding: 20px;
+            border: 2px solid #2d4739;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow-y: auto;
+        }
+        .container{
+            position: relative;
+            width:100%;
+            max-width: 600px;
+            min-height: 200px;
+          
+            padding: 20px;
+            margin:20px auto; 
+        }
+        .button-container {
+            position: absolute;
+            bottom:0;
+            left:0;
+            right:0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding:10px;
+            
+        }
+        .button-container button:hover {
+            background-color: #00438baf;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 10%;
+            left: 40%;
+            
+          
+            
+            justify-content: center;
+          
+            
+        }
+        .modal-content {
+            background-color: #fdfcf7;
+            padding: 20px;
+            border: 1px solid #1f3128;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+        }
+        .board-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .search-box {
+            display: flex;
+            gap: 10px;
+        }
+        .search-box input {
+            width: 400px;
+            height: 40px;
+            padding: 10px;
+            font-size: 0.9em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .board-button {
+            width: 50px;
+            height: 40px;
+            font-size: 0.9em;
+            line-height: 40px;
+            border: none;
+            border-radius: 5px;
+            background-color: #215c3c;
+            color: #fdfcf7;
+           
+            text-align: center;
+            text-decoration: none;
+         
+            
+            
+        }
+        .board-button button:hover {
+            background-color: #ccc
+        }
+        .board-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fdfcf7;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        .board-table th, .board-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .board-table th {
+            background-color: #2d4739;
+            color: #fdfcf7;
+        }
+        .board-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        .board-table a {
+            color: #333;
+            text-decoration: none;
+        }
+        .board-table a:hover {
+            text-decoration: underline;
+        }
+        .pagination {
+            margin:0 auto;
+            justify-content: center;
+            
+            gap: 10px;
+        }
+        .pagination button {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2d4739;
+            color: #fdfcf7;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .pagination button:hover {
+            background-color: #1f3128;
+        }
+        .pagination button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        footer {
+            background-color: #2d4739;
+            color: #fdfcf7;
+            padding: 0px;
+            text-align: center;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            main {
+                padding: 0 10px;
+            }
+            .board-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .search-box {
+                flex-direction: column;
+                width: 100%;
+            }
+            .search-box input, .search-box button, .write-btn {
+                width: 100%;
+            }
+            .board-table th, .board-table td {
+                font-size: 0.8em;
+                padding: 8px;
+            }
+        }
+#announcement-details label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        #announcement-details input, #announcement-details textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        #announcement-details textarea {
+            height: 200px;
+            resize: vertical;
+        }
+        #announcement-details button {
+            margin-top: 10px;
+            width: 100px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2d4739;
+            color: #fdfcf7;
+            cursor: pointer;
+        }
+        #announcement-details button:hover {
+            background-color: #1f3128;
+        }

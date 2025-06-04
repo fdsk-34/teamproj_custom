@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 | 카페</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+        <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/header.css">
+
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <style>
+      
+    </style>
+</head>
+<body>
+    <header class="site-header">
+         <h1><img src="../img/K-038.png"> 이른 아침</h1>
+        <nav>
+            <a href="./index.html">홈</a>
+            <a href="./submenu.html">메뉴</a>
+            <a href="./findstore.html">매장 찾기</a>
+            <a href="./board.html" >자유 게시판</a>
+        </nav>
+        <nav>
+            <a href="./login.html" class="active">로그인</a>
+            <a href="./join_page.html">회원 가입</a>
+            <a href="./dlivery.html">배송현황</a>
+            <a href="./order_tracking.html">주문조회</a>
+            <span class="cart-icon">장바구니🛒<span class="cart-count">0</span></span>
+        </nav>
+    </header>
+    <main class="container">
+        <div id="image-container">
+            <img src="../img/K-038.png" alt="Cafe Logo">
+        </div>
+        <form id="login-form">
+            <h2>로그인</h2>
+            <label>이메일: 
+                <input type="email" name="email" id="email-input" required>
+            </label>
+            <label>비밀번호: 
+                <input type="password" name="password" id="password-input" required>
+            </label>
+            <button id="login-btn" type="submit">로그인</button>
+            <p><a href="./recover_page.html">아이디/비밀번호 찾기</a></p>
+        </form>
+        <div id="login-confirm"></div>
+    </main>
+    <footer>
+        © 2025 수제커피브루 | 경기도 커피시 향기구 아라비카로 100
+    </footer>
+    <script src="../static/js/login.js">
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문 | 수제커피브루</title>
+    <link rel="stylesheet" href="../static/css/order_cart.css">
+          <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/board.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+</head>
+<body>
+    <header>
+        <h1><img src="../img/K-038.png"> 이른 아침</h1>
+        <nav>
+            <a href="./index.html">홈</a>
+            <a href="./submenu.html">메뉴</a>
+            <a href="./findstore.html">매장 찾기</a>
+            <a href="./board.html" >자유 게시판</a>
+        </nav>
+        <nav>
+            <a href="./login.html">로그인</a>
+            <a href="./join_page.html">회원 가입</a>
+            <a href="./dlivery.html">배송현황</a>
+            <a href="./order_tracking.html" class="active">주문조회</a>
+            <span class="cart-icon">장바구니🛒<span class="cart-count">0</span></span>
+        </nav>
+    </header>
+
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <h2>장바구니</h2>
+            <div id="cartItems"></div>
+            <p>총액: ₩<span id="cartTotal">0</span></p>
+            <button class="btn" onclick="proceedToOrder()">주문하기</button>
+            <button class="btn" onclick="closeModal()">닫기</button>
+        </div>
+    </div>
+
+    <div class="order-form">
+        <h2>주문 정보 입력</h2>
+        <div class="form-group">
+            <label for="name">이름</label>
+            <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+            <label for="address">배송지 주소</label>
+            <input type="text" id="address" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">연락처</label>
+            <input type="text" id="phone" required pattern="\d{3}-\d{4}-\d{4}">
+        </div>
+        <div class="form-group">
+            <label for="payment">결제 수단</label>
+            <select id="payment" required>
+                <option value="card">신용카드</option>
+                <option value="mobile">간편결제</option>
+            </select>
+        </div>
+        <button class="btn" onclick="submitOrder()">결제하기</button>
+    </div>
+
+    <footer>
+        © 2025 수제커피브루 | 경기도 커피시 향기구 아라비카로 100
+    </footer>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function updateCart() {
+            const cartItems = document.getElementById('cartItems');
+            const cartCount = document.querySelector('.cart-count');
+            const cartTotal = document.getElementById('cartTotal');
+            cartItems.innerHTML = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price * item.quantity;
+                cartItems.innerHTML += `
+                    <div>
+                        <p>${item.name} - ₩${item.price} x 
+                            <button onclick="updateQuantity(${index}, -1)">-</button>
+                            ${item.quantity}
+                            <button onclick="updateQuantity(${index}, 1)">+</button>
+                            <button onclick="removeItem(${index})">삭제</button>
+                    </div>`;
+            });
+            cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartTotal.textContent = total;
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function updateQuantity(index, change) {
+            cart[index].quantity += change;
+            if (cart[index].quantity <= 0) cart.splice(index, 1);
+            updateCart();
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function openModal() {
+            document.getElementById('cartModal').style.display = 'flex';
+            updateCart();
+        }
+
+        function closeModal() {
+            document.getElementById('cartModal').style.display = 'none';
+        }
+
+        function proceedToOrder() {
+            if (cart.length === 0) {
+                alert('장바구니가 비어 있습니다.');
+                return;
+            }
+            closeModal();
+            // 주문 폼으로 스크롤 이동
+            document.querySelector('.order-form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function submitOrder() {
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+            const payment = document.getElementById('payment').value;
+
+            if (!name || !address || !phone) {
+                alert('모든 필드를 입력해주세요.');
+                return;
+            }
+
+            const order = {
+                items: cart,
+                name,
+                address,
+                phone,
+                payment,
+                total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
+                orderId: 'ORD' + Date.now()
+            };
+
+            // 모의 API 호출 (실제로는 백엔드 엔드포인트로 전송)
+            console.log('주문 데이터:', order);
+            alert(`주문 완료! 주문 번호: ${order.orderId}`);
+            localStorage.removeItem('cart');
+            cart = [];
+            updateCart();
+            window.location.href = './order_page.html';
+        }
+
+        document.querySelector('.cart-icon').addEventListener('click', openModal);
+
+        // 메뉴 페이지에서 호출될 함수 예시
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+            updateCart();
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    </script>
+</body>
+</html>

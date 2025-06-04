@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문조회 및 배송확인 | 수제커피브루</title>
+    <link rel="stylesheet" href="../static/css/order_tracking.css">
+          <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/header.css">
+
+    <link rel="stylesheet" href="../static/css/footer.css">
+</head>
+<body>
+    <header>
+         <h1><img src="./img/K-038.png"> 이른 아침</h1>
+        <nav>
+            <a href="./index.html">홈</a>
+            <a href="./submenu.html">메뉴</a>
+            <a href="./findstore.html">매장 찾기</a>
+            <a href="./board.html" >자유 게시판</a>
+        </nav>
+        <nav>
+            <a href="./login.html">로그인</a>
+            <a href="./join_page.html">회원 가입</a>
+            <a href="./dlivery.html">배송현황</a>
+            <a href="./order_tracking.html" class="active">주문조회</a>
+            <span class="cart-icon">장바구니🛒<span class="cart-count">0</span></span>
+        </nav>
+           
+    </header>
+
+    <main>
+        <div class="modal" id="cartModal">
+            <div class="modal-content">
+                <h2>장바구니</h2>
+                <div id="cartItems"></div>
+                <p>총액: ₩<span id="cartTotal">0</span></p>
+                <button class="btn" onclick="proceedToOrder()">주문하기</button>
+                <button class="btn" onclick="closeModal()">닫기</button>
+            </div>
+        </div>
+
+        <div class="order-query-form">
+            <h2>주문조회</h2>
+            <div class="form-group">
+                <label for="query">주문 번호 또는 이름</label>
+                <input type="text" id="query" placeholder="주문 번호(예: ORD123...) 또는 이름을 입력하세요" required>
+            </div>
+            <button class="btn" onclick="searchOrders()">조회하기</button>
+        </div>
+        <div class="order-img"><img src="../static/img/K-095.png" alt="Order Image"></div>
+        <div class="order-list" id="orderList"></div>
+    
+    </main>
+
+    <footer>
+        © 2025 수제커피브루 | 경기도 커피시 향기구 아라비카로 100
+    </footer>
+
+    <script src="../static/js/order_tracking.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴 | 수제커피브루</title>
+    <link rel="stylesheet" href="../static/css/goodsorder2.css">
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/header.css">
+
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><img src="../img/K-038.png"> 이른 아침</h1>
+        <nav>
+            <a href="./index.html">홈</a>
+            <a href="./submenu.html" class="active">메뉴</a>
+            <a href="./findstore.html">매장 찾기</a>
+            <a href="./board.html">자유 게시판</a>
+        </nav>
+        <nav>
+            <a href="./login.html">로그인</a>
+            <a href="./join_page.html">회원 가입</a>
+            <a href="./dlivery.html">배송현황</a>
+            <a href="./order_tracking.html">주문조회</a>
+            <a href="#" onclick="openCartModal()">장바구니🛒</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">우리의 굿즈 메뉴</h2>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <div class="product-img"><img src="../img/K-013.jpg" alt="커피시럽"></div>
+                <h3>커피 시럽</h3>
+                <p class="product-price">₩1,000</p>
+                <button class="btn add-to-cart-btn" data-name="커피 시럽" data-price="1000">장바구니에 추가</button>
+                <div class="icon-container">
+                    <img class="popular" src="../img/good_icon_popular.gif" alt="인기 아이콘">
+                    <img class="new" src="../img/good_icon_new.gif" alt="신상 아이콘">
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="product-img"><img src="../img/K-079.png" alt="티백"></div>
+                <h3>티백</h3>
+                <p class="product-price">₩1,500</p>
+                <button class="btn add-to-cart-btn" data-name="티백" data-price="1500">장바구니에 추가</button>
+                <div class="icon-container">
+                    <img class="popular" src="../img/good_icon_popular.gif" alt="인기 아이콘">
+                    <img class="new" src="../img/good_icon_new.gif" alt="신상 아이콘">
+                </div>
+            </div>
+            <div class="menu-card">
+                <div class="product-img"><img src="../img/K-080.png" alt="스무디 베이스"></div>
+                <h3>스무디 베이스</h3>
+                <p class="product-price">₩2,000</p>
+               <button class="btn add-to-cart-btn" data-name="스무디 베이스" data-price="2000">장바구니에 추가</button>
+                <div class="icon-container">
+                    <img class="popular" src="../img/good_icon_popular.gif" alt="인기 아이콘">
+                    <img class="new" src="../img/good_icon_new.gif" alt="신상 아이콘">
+                </div>
+            </div>
+            <div class="menu-card">
+                <div class="product-img"><img src="../img/K-015.jpg" alt="텀블러"></div>
+                <h3>텀블러</h3>
+                <p class="product-price">₩6,000</p>
+
+             <button class="btn add-to-cart-btn" data-name="텀블러" data-price="6000">장바구니에 추가</button>
+                <div class="icon-container">
+                    <img class="popular" src="../img/good_icon_popular.gif" alt="인기 아이콘">
+                    <img class="new" src="../img/good_icon_new.gif" alt="신상 아이콘">
+                </div>
+            </div>
+        </div>
+        <h2 class="section-title"></h2>
+        <div class="menu-grid2">
+            <div class="menu-card2">
+                <img src="../img/K-081.png" alt="커피 봉투"><br>
+                <br>
+                <h3>커피 봉투</h3>
+                <p class="product-price">₩500</p><br>
+                <button class="btn add-to-cart-btn" data-name="커피 봉투" data-price="500">장바구니에 추가</button>
+                <div class="icon-container">
+                    <img class="new" src="../img/good_icon_new.gif" alt="신상 아이콘">
+                </div>
+            </div>
+
+            <div class="menu-card2">
+                <div class="product-img"><img src="../img/K-014.jpg" alt="커피 포트"></div>
+                <h3>커피 포트</h3>
+                <h5 class="product-discount">₩22,000</h5>
+                <p class="product-price">₩18,500</p>
+               <button class="btn add-to-cart-btn" data-name="커피포트" data-price="18500">장바구니에 추가</button>
+                <div class="icon-container">
+                    <img class="sale" src="../img/sale.png" alt="세일 아이콘">
+                    <img class="new" src="../img/good_icon_new.gif" alt="신상 아이콘">
+                </div>
+            </div>
+
+            <div class="menu-card2">
+                <div class="product-img"><img src="../img/K-036.jpg" alt="핸드드립 추출기"></div>
+                <h3>핸드드립 추출기</h3>
+                <h5 class="product-discount">₩600,000</h5>
+                <p class="product-price">₩500,000</p>
+              <button class="btn add-to-cart-btn" data-name="핸드드립 추출기" data-price="500000">장바구니에 추가</button>
+                <div class="icon-container">
+                    <img class="sale" src="../img/sale.png" alt="세일 아이콘">
+                    <img class="new" src="../img/good_icon_new.gif" alt="신상 아이콘">
+                </div>
+            </div>
+            <div class="menu-card2">
+                <div class="product-img"><img src="../img/K-082.png" alt="키홀더"></div>
+                <h3>키홀더</h3>
+                <p class="product-price">₩800</p>
+                <button class="btn add-to-cart-btn" data-name="키홀더" data-price="800">장바구니에 추가</button>
+                <div class="icon-container">
+                    <img class="popular" src="../img/good_icon_popular.gif" alt="인기 아이콘">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 주문 추가 모달 -->
+    <div id="add-to-cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddToCartModal()">×</span>
+            <h2 id="modal-item-name"></h2>
+            <p>가격: ₩<span id="modal-item-price"></span></p>
+            <div class="form-group">
+                <label>수령 장소:</label>
+                <input type="radio" name="location" value="designated" id="location-designated" checked>
+                <label for="location-designated">지정 장소</label>
+                <input type="radio" name="location" value="non-designated" id="location-non-designated">
+                <label for="location-non-designated">지정 외 장소</label>
+            </div>
+            <div class="form-group">
+                <label>대리 수령:</label>
+                <input type="checkbox" id="extra-shot"> 예 
+            </div>
+            <div class="form-group">
+                <label>배송:</label>
+                <select id="delivery">
+                    <option value="none">없음</option>
+                    <option value="same-day">당일 배송 (+₩5000)</option>
+                    <option value="holiday">휴일 배송 (+₩5000)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>수량:</label>
+                <input type="number" id="quantity" min="1" value="1">
+            </div>
+            <div class="btn-group">
+                <button class="btn" onclick="addToCart()">장바구니에 추가</button>
+                <button class="btn" onclick="closeAddToCartModal()">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCartModal()">×</span>
+            <h3>장바구니</h3>
+            <div id="cart-items"></div>
+            <div class="total-section">
+                총액: ₩<span id="cart-total">0</span> (배송비: ₩<span id="cart-shipping">0</span>)
+            </div>
+            <div class="form-group">
+                <label for="cart-name">이름</label>
+                <input type="text" id="cart-name">
+                <div class="error" id="cart-name-error">이름을 2자 이상 입력해주세요.</div>
+            </div>
+            <div class="form-group">
+                <label for="cart-phone">연락처</label>
+                <input type="text" id="cart-phone" placeholder="010-1234-5678">
+                <div class="error" id="cart-phone-error">유효한 연락처를 입력해주세요.</div>
+            </div>
+            <div class="form-group">
+                <label for="cart-address">배송지 주소</label>
+                <input type="text" id="cart-address">
+                <div class="error" id="cart-address-error">주소를 5자 이상 입력해주세요.</div>
+            </div>
+            <div class="form-group">
+                <label for="cart-payment">결제 수단</label>
+                <select id="cart-payment">
+                    <option value="credit-card">신용카드</option>
+                    <option value="easy-payment">간편결제</option>
+                </select>
+            </div>
+            <div class="btn-group">
+                <button class="btn" onclick="submitOrder()">결제하기</button>
+                <button class="btn" onclick="closeCartModal()">닫기</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        © 2025 수제커피브루 | 경기도 커피시 향기구 아라비카로 100
+    </footer>
+
+    <script src="../static/js/goodsorder.js">
+
+    </script>
+</body>
+
+</html>

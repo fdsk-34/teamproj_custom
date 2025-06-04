@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴 | 수제커피브루</title>
+    <link rel="stylesheet" href="../static/css/menu_order.css">
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/header.css">
+
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><img src="../static/img/K-038.png"> 이른 아침</h1>
+        <nav>
+            <a href="./index.html">홈</a>&nbsp;
+          <a href="./submenu.html" class="active">메뉴</a>
+          <a href="./findstore.html">매장 찾기</a>
+          <a href="./board.html">자유 게시판</a>
+        </nav>
+        <nav>
+            <a href="./login.html">로그인</a>
+            <a href="./join_page.html">회원 가입</a>
+            <a href="./dlivery.html">배송현황</a>
+            <a href="./order_tracking.html">주문조회</a>
+          <a href="#" class="cart-icon" onclick="openCartModal()">장바구니🛒0</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">휘핑 제품 (Whipping product)</h2>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <div class="product-img"><a href="whipping_view1"><img src="../static/img/1437720791_s_0.jpg" alt="스테인리스 휘핑기 가스 홀더"></a></div>
+                <h3>스테인리스 휘핑기 가스 홀더</h3>
+                <p>₩14,000</p>
+                <button class="btn" onclick="openAddToCartModal('스테인리스 휘핑기 가스 홀더', 14000)">장바구니에 추가</button>
+                  <div class="icon-container">            
+                
+                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
+            </div>
+            </div>
+            <div class="menu-card">
+                <div class="product-img"><a href="whipping_view2"><img src="../static/img/1480481818675s0.jpg" alt="일자 휘핑기 일회용 데코레이터"></a></div>
+                <h3>일자형 데코레이터 (실버&화이트전용)</h3>
+                <p>₩5,500</p>
+                <button class="btn" onclick="openAddToCartModal('일자형 데코레이터', 5500)">장바구니에 추가</button>
+                  <div class="icon-container">            
+                <img class="popular" src="../static/img/good_icon_popular.gif" alt="인기 아이콘">
+                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
+            </div>
+            </div>
+            <div class="menu-card">
+                <div class="product-img"><a href="whipping_view3"><img src="../static/img/1638161818833s0.jpg" alt="니트로피커용 질소가스통"></a></div>
+                <h3>니트로피커용 질소 가스통</h3>
+                <p>₩5,000</p>
+                <button class="btn" onclick="openAddToCartModal('니트로피커용 질소 가스통', 5000)">장바구니에 추가</button>
+                  <div class="icon-container">            
+                <img class="popular" src="../static/img/good_icon_popular.gif" alt="인기 아이콘">
+                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
+            </div>
+            </div>
+            <div class="menu-card">
+                <div class="product-img"><a href="whipping_view4"><img src="../static/img/1638160776972s0.jpg" alt="니트로피커용 질소 가스통 묶음"></a></div>
+                <h3>니트로피커용 질소 가스통 묶음</h3>
+                <p>₩49,000</p>
+                <button class="btn" onclick="openAddToCartModal('니트로피커용 질소 가스통 묶음', 49000)">장바구니에 추가</button>
+                <div class="icon-container">            
+                <img class="popular" src="../static/img/good_icon_popular.gif" alt="인기 아이콘">
+                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
+            </div>
+            </div>
+
+             <div class="menu-card">
+                <div class="product-img"><a href="whipping_view5"><img src="../static/img/1368089200s0.jpg" alt="골드하임 휘핑기 500ml"></a></div>
+                <h3>골드하임 휘핑기 500ml</h3>
+                <p>₩49,000</p>
+                <button class="btn" onclick="openAddToCartModal('골드하임 휘핑기 500ml', 49000)">장바구니에 추가</button>
+                <div class="icon-container">            
+                <img class="popular" src="../static/img/good_icon_popular.gif" alt="인기 아이콘">
+                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
+            </div>
+            </div>
+
+             <div class="menu-card">
+                <div class="product-img"><a href="whipping_view6"><img src="../static/img/1497922047998s0.jpg" alt="아이티스 휘핑기 블루250ml"></a></div>
+                <h3>아이티스 휘핑기 블루250ml</h3>
+                <p>₩46,000</p>
+                <button class="btn" onclick="openAddToCartModal('아이티스 휘핑기 블루250ml', 46000)">장바구니에 추가</button>
+                <div class="icon-container">            
+                <img class="popular" src="../static/img/good_icon_popular.gif" alt="인기 아이콘">
+                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
+            </div>
+            </div>
+
+             <div class="menu-card">
+                <div class="product-img"><a href="whipping_view7"><img src="../static/img/1517902482101s0.jpg" alt="달럽 프라이드 휘핑 크림"></a></div>
+                <h3>달럽 프라이드 휘핑 크림</h3>
+                <p>₩4,900</p>
+                <button class="btn" onclick="openAddToCartModal('달럽 프라이드 휘핑 크림', 4900)">장바구니에 추가</button>
+                <div class="icon-container">            
+                <img class="popular" src="../static/img/good_icon_popular.gif" alt="인기 아이콘">
+                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
+            </div>
+            </div>
+
+             <div class="menu-card">
+                <div class="product-img"><a href="whipping_view8"><img src="../static/img/1411004160s0.jpg" alt="에어로탑 휘핑크림 1L"></a></div>
+                <h3>에어로탑 휘핑크림 1L</h3>
+                <p>₩5,200</p>
+                <button class="btn" onclick="openAddToCartModal('니트로피커용 질소 가스통 묶음', 5200)">장바구니에 추가</button>
+                <div class="icon-container">            
+                <img class="popular" src="../static/img/good_icon_popular.gif" alt="인기 아이콘">
+                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
+            </div>
+            </div>
+
+        </div>
+        <h2 class="section-title">유제품 (Dairy product)</h2>
+        <div class="menu-grid2">
+            <div class="menu-card2">
+                <div class="product-img"><a href="whipping_view9"><img src="../static/img/1554868812000_s.jpg" alt="메디밀 연유 500ml"></a></div>
+                <h3>메디밀 연유 500ml</h3>
+              <!--  <h5 class="product-discount">₩4,500</h5>-->
+                        <p class="product-price">₩3,000</p>
+                <button class="btn" onclick="openAddToCartModal('메디밀 연유 500ml', 3000)">장바구니에 추가</button>
+                 <div class="icon-container">            
+             <!--   <img class="sale" src="./img/sale.png" alt="세일 아이콘"> -->
+                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
+             </div>
+            </div> 
+           
+            <div class="menu-card2">
+                <div class="product-img"><a href="whipping_view10"><img src="../static/img/1435034745_s_0.jpg" alt="크리밀 연유"></a></div>
+                <h3>크리밀 연유 </h3>
+                <h5 class="product-discount">₩5,000</h5>
+                        <p class="product-price">₩4,500</p>
+                <button class="btn" onclick="openAddToCartModal('크리밀 연유', 4500)">장바구니에 추가</button>
+                 <div class="icon-container">            
+                <img class="sale" src="../static/img/sale.png" alt="세일 아이콘">
+                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
+            </div> 
+            </div>
+            <div class="menu-card2">
+                <div class="product-img"><a href="whipping_view11"><img src="../static/img/1454049580575s0.jpg" alt="리치스 연유"></a></div>
+               <h3>리치스 연유</h3>
+             <!--    <h5 class="product-discount">₩5,500</h5> -->
+                        <p class="product-price">₩5,200</p>
+             <button class="btn" onclick="openAddToCartModal('리치스 연유', 5200)">장바구니에 추가</button>
+             <div class="icon-container">            
+             <!-- <img class="sale" src="./img/sale.png" alt="세일 아이콘">  -->
+                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
+            </div> 
+          </div> 
+        
+
+            <div class="menu-card2">
+                <div class="product-img"><a href="whipping_view12"><img src="../static/img/seoul.jpg" alt="서울우유 연유"></a></div>
+                <h3>서울우유 연유</h3>
+                <h5 class="product-discount">₩6,500</h5>
+                        <p class="product-price">₩6,000</p>
+                <button class="btn" onclick="openAddToCartModal('서울우유 연유', 6000)">장바구니에 추가</button>
+                 <div class="icon-container">            
+                <img class="sale" src="../static/img/sale.png" alt="세일 아이콘">
+                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
+            </div> 
+            </div>
+        </div>
+    </div>
+
+    <!-- 주문 추가 모달 -->
+    <div class="modal" id="add-to-cart-modal">
+        <div class="modal-content">
+            <h3 id="modal-item-name"></h3>
+            <p>가격: ₩<span id="modal-item-price"></span></p>
+            <div class="form-group options-group">
+                <div>
+                    <label>휘핑크림</label>
+                    <input type="radio" name="temp" value="hot" checked> 냉장
+                    <input type="radio" name="temp" value="ice"> 냉동
+                </div>
+                <div>
+                    <label>보조 거품기 추가</label>
+                    <input type="checkbox" id="extra-shot">
+                </div>
+                <div>
+                    <label>휘핑 스프레이 추가(₩5000)</label>
+                    <select id="syrup">
+                        <option value="none">없음</option>
+                        <option value="vanilla">플레인</option>
+                        <option value="caramel">딸기향</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="quantity">수량</label>
+                    <input type="number" id="quantity" min="1" value="1">
+                </div>
+            </div>
+            <div class="btn-group">
+                <button class="btn" onclick="addToCart()">장바구니에 추가</button>
+                <button class="btn" onclick="closeAddToCartModal()">닫기</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 장바구니 모달 -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <h3>장바구니</h3>
+            <div id="cart-items"></div>
+            <div class="total-section">
+                총액: ₩<span id="cart-total">0</span> (배송비: ₩<span id="cart-shipping">0</span>)
+            </div>
+            <div class="form-group inline-group">
+                <div>
+                    <label for="cart-name">이름</label>
+                    <input type="text" id="cart-name" placeholder="이름">
+                    <span class="error" id="cart-name-error">이름을 2자 이상 입력해주세요.</span>
+                </div>
+                <div>
+                    <label for="cart-phone">연락처</label>
+                    <input type="text" id="cart-phone" placeholder="010-1234-5678">
+                    <span class="error" id="cart-phone-error">유효한 연락처를 입력해주세요.</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="cart-address">배송지 주소</label>
+                <input type="text" id="cart-address" placeholder="주소">
+                <span class="error" id="cart-address-error">주소를 5자 이상 입력해주세요.</span>
+            </div>
+            <div class="form-group">
+                <label for="cart-payment">결제 수단</label>
+                <select id="cart-payment">
+                    <option value="card">신용카드</option>
+                    <option value="mobile">간편결제</option>
+                </select>
+            </div>
+            <div class="btn-group">
+                <button class="btn" onclick="submitOrder()">결제하기</button>
+                <button class="btn" onclick="clearCart()">전체 취소</button>
+                <button class="btn" onclick="closeCartModal()">닫기</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        © 2025 수제커피브루 | 경기도 커피시 향기구 아라비카로 100
+    </footer>
+
+    <script src="../static/js/menu_order.js">
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>수제커피브루 - 공지사항 보기</title>
+    <link rel="stylesheet" href="../static/css/noticeview.css">
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/header.css">
+
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><img src="./img/K-038.png"> 이른 아침</h1>
+        <nav>
+            <a href="./index.html">홈</a>
+            <a href="./submenu.html">메뉴</a>
+            <a href="./findstore.html">매장 찾기</a>
+            <a href="./board.html" class="active">자유 게시판</a>
+        </nav>
+        <nav>
+            <a href="./login.html">로그인</a>
+            <a href="./join_page.html">회원 가입</a>
+            <a href="./dlivery.html">배송현황</a>
+            <a href="./order_tracking.html">주문조회</a>
+            <span class="cart-icon">장바구니🛒<span class="cart-count">0</span></span>
+        </nav>
+    </header>
+
+    <main class="notice-box">
+        <h2>공지사항 보기</h2>
+
+        <div id="announcement-details"></div>
+        <section class="container">
+        <div class="button-container">
+            <button class="board-button" onclick="openDeleteAuth()">삭제</button>
+            <button class="board-button" onclick="closeAnnouncement()">닫기</button>
+            <button class="board-button" onclick="location.href='index.html'">이전</button>
+        </div>
+</section>
+    </main>
+
+    <div class="modal" id="modal-overlay">
+        <div class="modal-content" id="delete-auth-panel">
+            <h3>삭제 암호 입력</h3>
+            <input id="delete-password" type="password">
+            <button onclick="verifyAndDelete()">확인</button>
+            <button onclick="closeDeleteAuth()">취소</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 수제커피브루 | 경기도 커피시 향기구 아라비카로 100</p>
+    </footer>
+
+    <script src="../static/js/noticeview.js">
+
+    </script>
+</body>
+
+</html>

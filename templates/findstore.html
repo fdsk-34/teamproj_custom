@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매장 검색 및 주소 찾기</title>
+    <link rel="stylesheet" href="../static/css/findstore.css">
+        <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/header.css">
+
+    <link rel="stylesheet" href="../static/css/footer.css">
+
+    <style>
+    
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+          <h1><img src="./img/K-038.png"> 이른 아침</h1>
+        <nav>
+            <a href="./index.html">홈</a>
+            <a href="./submenu.html">메뉴</a>
+            <a href="./findstore.html" class="active">매장 찾기</a>
+            <a href="./board.html" >자유 게시판</a>
+        </nav>
+        <nav>
+            <a href="./login.html">로그인</a>
+            <a href="./join_page.html">회원 가입</a>
+            <a href="./dlivery.html">배송현황</a>
+            <a href="./order_tracking.html">주문조회</a>
+            <a href="./order_cart.html">장바구니🛒</a>
+        </nav>
+    </header>
+
+
+
+
+
+
+    <!-- 주문관리 :  주문 오더 확인-->
+
+    <main class="container">
+        <h1 style=" margin-left:150px;" color="#2d4739"> 매장 찾기</h1>
+        <div class="search-box">
+            <input type="text" id="address-input" placeholder="위치나 키워드를 입력하세요">
+            <button id="search-btn">검색</button>
+
+        </div>
+        <br><br><br><br>
+        <div id="map"></div>
+
+        <script src="../static/js/findstore.js">
+         
+        </script>
+        <ul id="store-list" style="margin-left: 600px; margin-top: 20px;">
+
+        </ul>
+    </main>
+    <script async defer
+        link="map.js" ></script>
+
+     // 구글 맵 api 스크립트 호출 데이터>
+    <footer>
+        &copy; 2025 수제커피브루 | 경기도 커피시 향기구 아라비카로 100
+    </footer>
+
+</body>
+
+</html>

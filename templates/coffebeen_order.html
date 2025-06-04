@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴 | 수제커피브루</title>
+    <link rel="stylesheet" href="../static/css/coffeebeenorder.css">
+        <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/header.css">
+   
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1><img src="../static/img/K-038.png"> 이른 아침</h1>
+        <nav>
+            <a href="./index.html">홈</a>
+            <a href="./submenu.html" class="active">메뉴</a>
+            <a href="./findstore.html">매장 찾기</a>
+            <a href="./board.html" >자유 게시판</a>
+        </nav>
+        <nav>
+            <a href="./login.html">로그인</a>
+            <a href="./join_page.html">회원 가입</a>
+            <a href="./dlivery.html">배송현황</a>
+            <a href="./order_tracking.html">주문조회</a>
+            <a href="#" onclick="openCartModal()">장바구니🛒</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">이른 아침 Take Out</h2>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <img src="../static/img/K-070.png" alt="브루드 아메리카노">
+                <h3>브루드 아메리카노</h3>
+                <p>₩4,000</p>
+                <button class="btn" onclick="openAddToCartModal('브루드 아메리카노', 4000)">장바구니에 추가</button>
+            </div>
+            <div class="menu-card">
+                <img src="../static/img/K-077.png" alt="핸드드립 콜드브루">
+                <h3>핸드드립 콜드브루</h3>
+                <p>₩4,500</p>
+                <button class="btn" onclick="openAddToCartModal('핸드드립 콜드브루', 4500)">장바구니에 추가</button>
+            </div>
+            <div class="menu-card">
+                <img src="../static/img/K-072.png" alt="시그니처 라떼">
+                <h3>시그니처 라떼</h3>
+                <p>₩5,000</p>
+                <button class="btn" onclick="openAddToCartModal('시그니처 라떼', 5000)">장바구니에 추가</button>
+            </div>
+            <div class="menu-card">
+                <img src="../static/img/K-076.png" alt="밀크 라떼">
+                <h3>밀크 라떼</h3>
+                <p>₩6,000</p>
+                <button class="btn" onclick="openAddToCartModal('밀크 라떼', 6000)">장바구니에 추가</button>
+            </div>
+        </div>
+        <h2 class="section-title">이른 아침 홀 메뉴</h2>
+        <div class="menu-grid2">
+            <div class="menu-card">
+                <img src="../static/img/K-088.png" alt="브루드 아메리카노">
+                <h3>브루드 아메리카노</h3>
+                <p>₩4,000</p>
+                <button class="btn" onclick="openAddToCartModal('브루드 아메리카노', 4000)">장바구니에 추가</button>
+            </div>
+            <div class="menu-card">
+                <img src="../static/img/K-071.png" alt="핸드드립 콜드브루">
+                <h3>핸드드립 콜드브루</h3>
+                <p>₩4,500</p>
+                <button class="btn" onclick="openAddToCartModal('핸드드립 콜드브루', 4500)">장바구니에 추가</button>
+            </div>
+            <div class="menu-card">
+                <img src="../static/img/K-073.png" alt="시그니처 라떼">
+                <h3>딸기 라떼</h3>
+                <p>₩6,000</p>
+                <button class="btn" onclick="openAddToCartModal('딸기 라떼', 5000)">장바구니에 추가</button>
+            </div>
+            <div class="menu-card">
+                <img src="../static/img/K-085.png" alt="에스프레쏘">
+                <h3>에스프레쏘</h3>
+                <p>₩6,000</p>
+                <button class="btn" onclick="openAddToCartModal('에스프레쏘', 6000)">장바구니에 추가</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 주문 추가 모달 -->
+      <!-- 옵션 모달 -->
+   <div id="add-to-cart-modal" class="modal">
+    <div class="modal-content">
+        <h3 id="modal-item-name"></h3>
+        <p>가격: ₩<span id="modal-item-price"></span></p>
+        <div class="form-group">
+            <label>온도</label>
+            <div class="options-group">
+                <label><input type="radio" name="temp" value="핫"> 핫</label>
+                <label><input type="radio" name="temp" value="아이스"> 아이스</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>샷 추가 (₩500)</label>
+            <input type="checkbox" id="extra-shot">
+        </div>
+        <div class="form-group">
+            <label>시럽 추가 (₩500)</label>
+            <select id="syrup">
+                <option value="none">없음</option>
+                <option value="바닐라">바닐라</option>
+                <option value="캐러멜">캐러멜</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>수량</label>
+            <input type="number" id="quantity" value="1" min="1">
+        </div>
+        <div class="btn-group">
+            <button class="btn" onclick="addToCart()">장바구니에 추가</button>
+            <button class="btn" onclick="closeAddToCartModal()">닫기</button>
+        </div>
+    </div>
+</div>
+
+    <!-- 장바구니 모달 -->
+ <div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <h3>장바구니</h3>
+        <div id="cart-items"></div>
+        <div class="total-section">
+            총액: ₩<span id="cart-total">0</span> (배송비: ₩0)
+        </div>
+        <div class="form-group">
+            <label>이름</label>
+            <input type="text" id="checkout-name" placeholder="이름을 2자 이상 입력해주세요.">
+        </div>
+        <div class="form-group">
+            <label>연락처</label>
+            <input type="text" id="checkout-phone" placeholder="유효한 연락처를 입력해주세요.">
+        </div>
+        <div class="form-group">
+            <label>배송지 주소</label>
+            <input type="text" id="checkout-address" placeholder="주소를 5자 이상 입력해주세요.">
+        </div>
+        <div class="form-group">
+            <label>결제 수단</label>
+            <div class="options-group">
+                <label><input type="radio" name="payment" value="신용카드"> 신용카드</label>
+                <label><input type="radio" name="payment" value="간편결제"> 간편결제</label>
+            </div>
+        </div>
+        <div class="btn-group">
+            <button class="btn" onclick="submitOrder()">결제하기</button>
+            <button class="btn" onclick="clearCart()">장바구니 비우기</button>
+            <button class="btn" onclick="closeCartModal()">닫기</button>
+        </div>
+    </div>
+</div>
+
+    <footer>
+        © 2025 수제커피브루 | 경기도 커피시 향기구 아라비카로 100
+    </footer>
+
+    <script src="../static/js/coffeebeenorder.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+    body {
+            margin: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #fff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #2d4739;
+            color: white;
+            padding: 0px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        main {
+            flex: 1;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #719CED;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 0.8rem;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background-color: #fdfcf7;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+        }
+        .write-form {
+            background-color: #fdfcf7;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .write-form h3 {
+            color: #2d4739;
+            margin-top: 0;
+        }
+        .write-form input, .write-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 0.9em;
+            box-sizing: border-box;
+        }
+        .write-form textarea {
+            height: 200px;
+            resize: vertical;
+        }
+        .write-form .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+        .write-form button {
+            width: 100px;
+            height: 40px;
+            font-size: 0.9em;
+            border: none;
+            border-radius: 5px;
+            background-color: #2d4739;
+            color: #fdfcf7;
+            cursor: pointer;
+        }
+        .write-form button:hover {
+            background-color: #1f3128;
+        }
+        footer {
+            background-color: #2d4739;
+            color: #fdfcf7;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            main {
+                padding: 0 10px;
+            }
+            .write-form .btn-group {
+                flex-direction: column;
+            }
+            .write-form button {
+                width: 100%;
+            }
+        }

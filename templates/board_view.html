@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 보기 | 수제커피브루</title>
+    <link rel="stylesheet" href="../static/css/boardview.css">
+        <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/board.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+     
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+          <h1><img src="../static/img/K-038.png"> 이른 아침</h1>
+        <nav>
+            <a href="./index.html">홈</a>&nbsp;
+          <a href="./submenu.html" >메뉴</a>
+          <a href="./findstore.html">매장 찾기</a>
+          <a href="./board.html" class="active">자유 게시판</a>
+        </nav>
+        <nav>
+            <a href="./login.html">로그인</a>
+            <a href="./join_page.html">회원 가입</a>
+            <a href="./dlivery.html">배송현황</a>
+            <a href="./order_tracking.html">주문조회</a>
+            <a href="./order_cart.html" onclick="openCartModal()">장바구니🛒</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 style="color: #2d4739; margin-bottom: 20px;">게시글 보기</h2>
+        <div class="post-box" id="post-details"></div>
+        <div class="btn-group">
+            <button onclick="openDeleteAuth()">삭제</button>
+            <button onclick="closePost()">닫기</button>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="modal-overlay" onclick="closeDeleteAuth()"></div>
+    <div class="delete-auth-panel" id="delete-auth-panel">
+        <h3 style="color: #2d4739;">삭제 암호 입력</h3>
+        <input type="password" id="delete-password" placeholder="암호를 입력하세요">
+        <div class="btn-group">
+            <button onclick="verifyAndDelete()">확인</button>
+            <button onclick="closeDeleteAuth()">취소</button>
+        </div>
+    </div>
+
+   
+
+    <footer>
+        © 2025 수제커피브루 | 경기도 커피시 향기구 아라비카로 100
+    </footer>
+
+    <script src="../static/js/boardview.js">
+
+    </script>
+</body>
+
+</html>

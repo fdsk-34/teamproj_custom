@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "D:/osm"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "팀프",
+		"files.autoGuessEncoding": false,
+		"github.copilot.chat.languageContext.fix.typescript.enabled": false,
+		"github.copilot.chat.localeOverride": "ko"
+	}
+}
