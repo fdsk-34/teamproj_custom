@@ -63,7 +63,7 @@
       .menu-grid,
       .menu-grid2 {
           display: grid;
-
+           margin-bottom: 40px;
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
           gap: 20px;
       }

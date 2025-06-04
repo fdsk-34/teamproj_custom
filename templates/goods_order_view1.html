@@ -4,212 +4,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메뉴 | 수제커피브루</title>
-    <link rel="stylesheet" href="../static/css/menu_order.css">
+    <title>게시글 작성 | 수제커피브루</title>
     <link rel="stylesheet" href="../static/css/common.css">
     <link rel="stylesheet" href="../static/css/header.css">
-
+    <link rel="stylesheet" href="../static/css/item_view.css">
     <link rel="stylesheet" href="../static/css/footer.css">
-    <style>
-
-    </style>
 </head>
 
 <body>
     <header>
-        <h1><img src="../static/img/K-038.png"> 이른 아침</h1>
+         <h1><img src="../static/img/K-038.png"> 이른 아침</h1>
         <nav>
-            <a href="./index.html">홈</a>&nbsp;
-          <a href="./submenu.html" class="active">메뉴</a>
-          <a href="./findstore.html">매장 찾기</a>
-          <a href="./board.html">자유 게시판</a>
-        </nav>
-        <nav>
-            <a href="./login.html">로그인</a>
-            <a href="./join_page.html">회원 가입</a>
+            <a href="./index.html">홈</a>
+            <a href="./submenu.html">메뉴</a>
+            <a href="./findstore.html">매장 찾기</a>
             <a href="./dlivery.html">배송현황</a>
             <a href="./order_tracking.html">주문조회</a>
+            <a href="./login.html">로그인</a>
+            <a href="./join_page.html">회원 가입</a>
+            <a href="./board.html" class="active">자유 게시판</a>
             <span class="cart-icon">장바구니🛒<span class="cart-count">0</span></span>
         </nav>
     </header>
 
-    <div class="container">
-        <h2 class="section-title">스무디 (Smoothies)</h2>
-        <div class="menu-grid">
-            <div class="menu-card">
-                <div class="product-img"><img src="../static/img/imyo_blueberry_smoothie_main.jpg" alt="블루베리 스무디"></div>
-                <h3>블루베리 스무디</h3>
-                <p>₩10,000</p>
-                <button class="btn" onclick="openAddToCartModal('블루베리 스무디', 10000)">장바구니에 추가</button>
-                  <div class="icon-container">            
-                <img class="popular" src="../static/img/good_icon_popular.gif" alt="인기 아이콘">
-                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
-            </div>
-            </div>
-            <div class="menu-card">
-                <div class="product-img"><img src="../static/img/imyo_peach_smoothie_main.jpg" alt="복숭아 스무디"></div>
-                <h3>복숭아 스무디</h3>
-                <p>₩10,000</p>
-                <button class="btn" onclick="openAddToCartModal('복숭아 스무디', 10000)">장바구니에 추가</button>
-                  <div class="icon-container">            
-                <img class="popular" src="../static/img/good_icon_popular.gif" alt="인기 아이콘">
-                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
-            </div>
-            </div>
-            <div class="menu-card">
-                <div class="product-img"><img src="../static/img/bevercity_apricot_base_main.jpg" alt="살구 스무디 베이스 원액"></div>
-                <h3>살구 스무디 베이스</h3>
-                <p>₩50,000</p>
-                <button class="btn" onclick="openAddToCartModal('살구 스무디 베이스 원액', 50000)">장바구니에 추가</button>
-                  <div class="icon-container">            
-                <img class="popular" src="../static/img/good_icon_popular.gif" alt="인기 아이콘">
-                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
-            </div>
-            </div>
-            <div class="menu-card">
-                <div class="product-img"><img src="../static/img/bevercily_green_apple_base_main.jpg" alt="청포도 스무디 베이스 원액"></div>
-                <h3>청포도 스무디 베이스</h3>
-                <p>₩60,000</p>
-                <button class="btn" onclick="openAddToCartModal('청포도 스무디 베이스 원액', 60000)">장바구니에 추가</button>
-                <div class="icon-container">            
-                <img class="popular" src="../static/img/good_icon_popular.gif" alt="인기 아이콘">
-                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
-            </div>
-            </div>
-        </div>
-        <h2 class="section-title">냉동 과일 (Frosted fruit)</h2>
-        <div class="menu-grid2">
-            <div class="menu-card2">
-                <div class="product-img"><img src="../static/img/imyo_strawberry_slices_main.jpg" alt="냉동 딸기"></div>
-                <h3>냉동 딸기 슬라이스</h3>
-                <h5 class="product-discount">₩4,5000</h5>
-                        <p class="product-price">₩4,0000</p>
-                <button class="btn" onclick="openAddToCartModal('냉동 딸기 슬라이스', 40000)">장바구니에 추가</button>
-                 <div class="icon-container">            
-                <img class="sale" src="../static/img/sale.png" alt="세일 아이콘">
-                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
-             </div>
-            </div> 
-           
-            <div class="menu-card2">
-                <div class="product-img"><img src="../static/img/caroman_flat_peach_mild_jam_main.jpg" alt="냉동 복숭아"></div>
-                <h3>냉동 복숭아 슬라이스</h3>
-                <h5 class="product-discount">₩5,0000</h5>
-                        <p class="product-price">₩4,5000</p>
-                <button class="btn" onclick="openAddToCartModal('냉동 복숭아 슬라이스', 45000)">장바구니에 추가</button>
-                 <div class="icon-container">            
-                <img class="sale" src="../static/img/sale.png" alt="세일 아이콘">
-                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
-            </div> 
-            </div>
-            <div class="menu-card2">
-                <div class="product-img"><img src="../static/img/caroman_sweet_mango_mild_jam_main.jpg" alt="냉동 망고"></div>
-                <h3>망고 슬라이스</h3>
-                <h5 class="product-discount">₩5,5000</h5>
-                        <p class="product-price">₩5,0000</p>
-             <button class="btn" onclick="openAddToCartModal('냉동 망고 슬라이스', 50000)">장바구니에 추가</button>
-             <div class="icon-container">            
-                <img class="sale" src="../static/img/sale.png" alt="세일 아이콘">
-                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
-            </div> 
-          </div> 
-        
+    <main>
+        <hr>
+        <div class="item_view">
 
-            <div class="menu-card2">
-                <div class="product-img"><img src="../static/img/caroman_passion_fruits_mild_jam_main.jpg" alt="냉동 과일"></div>
-                <h3>냉동 패션 후르츠</h3>
-                <h5 class="product-discount">₩75,000</h5>
-                        <p class="product-price">₩70,000</p>
-                <button class="btn" onclick="openAddToCartModal('냉동 패션 후르츠', 70000)">장바구니에 추가</button>
-                 <div class="icon-container">            
-                <img class="sale" src="../static/img/sale.png" alt="세일 아이콘">
-                <img class="new" src="../static/img/good_icon_new.gif" alt="신상 아이콘">
-            </div> 
+            <div class="item_img_view">
+                <div class="item_img_main">
+                    <img id="mainImage" src="../static/img/K-112.png" alt="바닐라 시럽">
+                </div>
+                <div class="item_img_selector">
+                    <img class="thumb" src="../static/thumbnail/K-112_resized.png" alt="바닐라 시럽">
+                    <img class="thumb" src="../static/img/K-013.jpg" alt="바닐라 시럽">
+                   
+              
+                </div>
             </div>
-        </div>
-    </div>
+            <div class="item_view_content">
+                <p class="title">[바닐라 시럽]</p>
+                <p>개별 단품 판매<br>+<br>무지홀더 6묶음 <br>+<br>골판지 1박스<br>(각10개입)</p>
+                <hr>
+                <div class="item">
+                    <div class="label">판매가격</div>
+                    <div class="price">67,500원</div>
+                </div>
 
-    <!-- 주문 추가 모달 -->
-    <div class="modal" id="add-to-cart-modal">
-        <div class="modal-content">
-            <h3 id="modal-item-name"></h3>
-            <p>가격: ₩<span id="modal-item-price"></span></p>
-            <div class="form-group options-group">
-                <div>
-                    <label>온도</label>
-                    <input type="radio" name="temp" value="hot" checked> 핫
-                    <input type="radio" name="temp" value="ice"> 아이스
+                <div class="item">
+                    <div class="label">적립금</div>
+                    <div class="value">0원</div>
                 </div>
-                <div>
-                    <label>샷 추가 (₩500)</label>
-                    <input type="checkbox" id="extra-shot">
-                </div>
-                <div>
-                    <label>시럽 추가 (₩500)</label>
-                    <select id="syrup">
-                        <option value="none">없음</option>
-                        <option value="vanilla">바닐라</option>
-                        <option value="caramel">캐러멜</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="quantity">수량</label>
-                    <input type="number" id="quantity" min="1" value="1">
-                </div>
-            </div>
-            <div class="btn-group">
-                <button class="btn" onclick="addToCart()">장바구니에 추가</button>
-                <button class="btn" onclick="closeAddToCartModal()">닫기</button>
-            </div>
-        </div>
-    </div>
 
-    <!-- 장바구니 모달 -->
-    <div class="modal" id="cart-modal">
-        <div class="modal-content">
-            <h3>장바구니</h3>
-            <div id="cart-items"></div>
-            <div class="total-section">
-                총액: ₩<span id="cart-total">0</span> (배송비: ₩<span id="cart-shipping">0</span>)
-            </div>
-            <div class="form-group inline-group">
-                <div>
-                    <label for="cart-name">이름</label>
-                    <input type="text" id="cart-name" placeholder="이름">
-                    <span class="error" id="cart-name-error">이름을 2자 이상 입력해주세요.</span>
+                <div class="item">
+                    <div class="label">배송비</div>
+                    <div class="value">무료배송</div>
                 </div>
-                <div>
-                    <label for="cart-phone">연락처</label>
-                    <input type="text" id="cart-phone" placeholder="010-1234-5678">
-                    <span class="error" id="cart-phone-error">유효한 연락처를 입력해주세요.</span>
+
+                <div class="item">
+                    <div class="label">상품상태</div>
+                    <div class="value">신상품</div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="cart-address">배송지 주소</label>
-                <input type="text" id="cart-address" placeholder="주소">
-                <span class="error" id="cart-address-error">주소를 5자 이상 입력해주세요.</span>
-            </div>
-            <div class="form-group">
-                <label for="cart-payment">결제 수단</label>
-                <select id="cart-payment">
-                    <option value="card">신용카드</option>
-                    <option value="mobile">간편결제</option>
-                </select>
-            </div>
-            <div class="btn-group">
-                <button class="btn" onclick="submitOrder()">결제하기</button>
-                <button class="btn" onclick="closeCartModal()">닫기</button>
+
+                <div class="item">
+                    <div class="label">제조사</div>
+                    <div class="value">etc</div>
+                </div>
+
+                <div class="item">
+                    <div class="label">구매수량</div>
+                    <div class="value">
+                        <input type="number" value="1" min="1"> 개
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="label">리드 색상</div>
+                    <div class="value">
+                        <select>
+                            <option>==리드 색상 선택==</option>
+                            <option>검정</option>
+                            <option>블루</option>
+                            <option>레드</option>
+                            <option>그린</option>
+                            <option>그레이</option>
+                            <option>베이지</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button style="background:#444; color:white;">BUY NOW</button>
+                    <button>CART</button>
+                    <button>WISHLIST</button>
+                </div>
             </div>
         </div>
-    </div>
+        <div class="item_detail_view">
+
+            <nav class="detail_header">
+                <a href="item_view_page.html#basic_info">기본 정보</a>
+                <a href="item_view_page.html#delivery_info">배송 정보</a>
+                <a href="item_view_page.html#refund_info">교환 및 반품 정보</a>
+                <a href="item_view_page.html#qa_info">상품 Q&A정보</a>
+            </nav>
+
+            <div class="detail_content">
+                <div class="content" id="basic_info">
+                    기본 정보
+                    <div>
+                        상품명: 8온스 세트
+
+                        구성품:
+
+                        무지 종이컵 1박스 (1,000개입)
+
+                        8온스 리드 1박스 (1,000개입)
+
+                        무지 홀더 1박스 (1,000개입)
+
+                        판매가격: 67,500원
+
+                        적립금: 없음
+
+                        제조사: 기타 (etc)
+
+                        상품상태: 신상품
+
+                        리드 색상 선택: 검정, 블루, 레드, 그린, 그레이, 베이지 중 택 1
+                    </div>
+                </div>
+                <div class="content" id="delivery_info">
+                    배송 정보
+                    <div>
+                        배송비: 무료배송
+
+                        배송지역: 전국
+
+                        배송기간: 결제 완료 후 1~3일 이내 발송 (주말 및 공휴일 제외)
+
+                        배송사: 업체 지정 택배사 이용
+                    </div>
+                </div>
+
+                <div class="content" id="refund_info">
+                    교환 및 반품 정보
+                    <div>
+                        교환/반품 가능 기간: 상품 수령 후 7일 이내
+
+                        교환/반품이 불가능한 경우:
+
+                        포장이 훼손된 경우
+
+                        고객 과실로 인한 상품 훼손
+
+                        사용 흔적이 있는 경우
+
+                        교환/반품 절차: 고객센터 문의 후 안내에 따라 진행
+
+                        반품 배송비: 고객 단순변심의 경우 왕복 배송비 고객 부담
+                    </div>
+                </div>
+
+                <div class="content" id="qa_info">
+                    상품 Q&A
+                    <div>
+                        Q. 리드 색상은 한 종류만 선택 가능한가요?
+                        A. 네, 한 세트 구매 시 한 가지 색상만 선택 가능합니다.
+
+                        Q. 낱개 구매도 가능한가요?
+                        A. 해당 상품은 세트 단위(1,000개입)로만 판매되고 있습니다.
+
+                        Q. 대량 구매 시 할인 가능한가요?
+                        A. 대량 구매나 B2B 거래를 원하실 경우 고객센터로 별도 문의 부탁드립니다.
+                    </div>
+                </div>
+            </div>
+    </main>
 
     <footer>
         © 2025 수제커피브루 | 경기도 커피시 향기구 아라비카로 100
     </footer>
 
-    <script src="../static/js/menu_order.js">
-
-    </script>
+    <script src="../static/js/item_view_page.js"></script>
 </body>
 
 </html>

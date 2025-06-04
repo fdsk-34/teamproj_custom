@@ -67,7 +67,7 @@
       .menu-grid,
       .menu-grid2 {
           display: grid;
-
+            
           grid-template-columns: repeat(5, minmax(150px, 1fr));
           gap: 5px;
       }
@@ -114,7 +114,7 @@
 
       .menu-card:hover,
       .menu-card2:hover {
-          transform: translateY(-5px);
+          transform: translateY(-15px);
       }
 
       .btn {
