@@ -57,14 +57,14 @@
             z-index: 1000;
         }
         .modal-content {
-            background-color: #fdfcf7;
+            background-color: #ebdc93;
             padding: 20px;
             border-radius: 10px;
             max-width: 500px;
             width: 90%;
         }
         .write-form {
-            background-color: #fdfcf7;
+            background-color: #ebdc93;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);

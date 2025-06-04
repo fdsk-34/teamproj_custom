@@ -63,7 +63,7 @@ function savePost() {
             console.log('Post saved:', post);
             console.log('All posts:', posts);
             alert('게시글이 작성되었습니다.');
-            location.href = '07_teamproj_board.html';
+            location.href = 'board.html';
         }
 
       
@@ -75,11 +75,11 @@ function cancelWrite() {
 
     // 모든 입력 필드가 비어있는지 확인
     if (!title && !author && !password && !content) {
-        window.location.href = './07_teamproj_board.html';
+        window.location.href = './board.html';
     } else {
         // 입력된 데이터가 있을 경우 확인 메시지 표시
         if (confirm('입력한 내용이 저장되지 않습니다. 취소하고 이동하시겠습니까?')) {
-            window.location.href = './07_teamproj_board.html';
+            window.location.href = './board.html';
         }
     }
 }         

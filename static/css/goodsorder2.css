@@ -26,9 +26,12 @@
       }
 
       .container {
-          max-width: 1200px;
-          margin: 40px auto;
-          padding: 0 20px;
+          max-width: 1400px;
+         
+          margin: 20px auto;
+          padding: 20px;
+          
+          box-sizing: border-box;
       }
 
       .new,
@@ -37,21 +40,22 @@
           width: 25px;
           height: 25px;
       }
-      
-       .product-price {
-            font-size: 16px;
-            color: #333;
-            font-weight: bold;
-            text-align: center;
-            margin: 4px 0;
-        }
-        .product-discount {
-            font-size: 14px;
-            color: #ff0000;
-            text-align: center;
-            text-decoration: line-through;
-            margin: 4px 0;
-        }
+
+      .product-price {
+          font-size: 16px;
+          color: #333;
+          font-weight: bold;
+          text-align: center;
+          margin: 4px 0;
+      }
+
+      .product-discount {
+          font-size: 14px;
+          color: #ff0000;
+          text-align: center;
+          text-decoration: line-through;
+          margin: 4px 0;
+      }
 
 
       h2.section-title {
@@ -64,33 +68,36 @@
       .menu-grid2 {
           display: grid;
 
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 20px;
+          grid-template-columns: repeat(5, minmax(150px, 1fr));
+          gap: 5px;
       }
 
       .menu-card,
       .menu-card2 {
-           
+            max-width: 200px;
           background-color: #fff;
           border: 1px solid #2d4739;
           border-radius: 10px;
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
           padding: 10px;
           text-align: center;
+          box-sizing: border-box;
       }
+
       .icon-container img {
           width: 25px;
           height: 25px;
           margin-right: 5px;
       }
-/* 상품 이미지 */
-      .product-img img{               
-            width: 170px;
-            height: 192px;
-            object-fit: contain;
-           
-        }
-      
+
+      /* 상품 이미지 */
+      .product-img img {
+          width: 160px;
+          height: 180px;
+          object-fit: contain;
+
+      }
+
 
       .menu-card h3,
       .menu-card2 h3 {
@@ -110,8 +117,8 @@
           transform: translateY(-5px);
       }
 
-      .btn {         
-                               
+      .btn {
+
           background-color: #2d4739;
           color: #fdfcf7;
           padding: 10px 15px;
@@ -120,7 +127,7 @@
           cursor: pointer;
           font-size: 0.9em;
           margin-bottom: 5px;
-          margin-top:20px;
+          margin-top: 20px;
       }
 
       .btn:hover {
@@ -242,6 +249,9 @@
           text-align: center;
           margin-top: 40px;
       }
+
+    
+         
 
       @media (max-width: 768px) {
           .modal-content {

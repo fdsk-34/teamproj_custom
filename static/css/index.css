@@ -28,7 +28,7 @@
             padding: 20px;
         }
         .hero {
-            background-image: url('../../img/K-040.jpg');
+            background-image: url('../../static/img/K-040.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -94,4 +94,5 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+            margin-top: auto;
         }

@@ -123,11 +123,11 @@
             console.log('Post deleted, remaining posts:', posts);
             alert('게시글이 삭제되었습니다.');
             closeDeleteAuth();
-            location.href = '07_teamproj_board.html';
+            location.href = 'board.html';
         }
 
         function closePost() {
-            location.href = '07_teamproj_board.html';
+            location.href = 'board.html';
         }
 
         loadPost();

@@ -32,7 +32,7 @@ function saveAnnouncement() {
     console.log('Announcement saved:', announcement);
     console.log('All announcements:', announcements);
     alert('공지사항이 작성되었습니다.');
-    location.href = '07_teamproj_notice.html';
+    location.href = 'notice.html';
 }
 
 function cancelWrite() {
@@ -42,10 +42,10 @@ function cancelWrite() {
     const content = document.getElementById('announcement-content').value;
 
     if (!adminPassword && !title && !author && !content) {
-        window.location.href = './07_teamproj_notice.html';
+        window.location.href = './notice.html';
     } else {
         if (confirm('입력한 내용이 저장되지 않습니다. 취소하고 이동하시겠습니까?')) {
-            window.location.href = './07_teamproj_notice.html';
+            window.location.href = './notice.html';
         }
     }
 }

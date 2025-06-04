@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             alert(`결제 완료! 주문 번호: ${order.orderId}\n총액: ₩${order.total}`);
             closeCartModal();
-            window.location.href = './07_teamproj_order_page.html';
+            window.location.href = './order_page.html';
         } catch (error) {
             console.error('결제 오류:', error);
             alert('결제에 실패했습니다. 다시 시도해주세요.');

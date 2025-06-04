@@ -94,11 +94,11 @@ function verifyAndDelete() {
     console.log('Announcement deleted, remaining announcements:', announcements);
     alert('공지사항이 삭제되었습니다.');
     closeDeleteAuth();
-    location.href = '07_teamproj_notice.html';
+    location.href = 'notice.html';
 }
 
 function closeAnnouncement() {
-    location.href = '07_teamproj_index.html';
+    location.href = 'index.html';
 }
 
 loadAnnouncement();

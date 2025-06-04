@@ -24,7 +24,7 @@ function displayAnnouncements(filteredAnnouncements = announcements) {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${start + index + 1}</td>
-            <td><a href="07_teamproj_notice_view.html?id=${encodeURIComponent(announcement.id)}">${announcement.title}</a></td>
+            <td><a href="notice_view.html?id=${encodeURIComponent(announcement.id)}">${announcement.title}</a></td>
             <td>${announcement.author}</td>
             <td>${new Date(announcement.createdAt).toLocaleDateString('ko-KR')}</td>
             <td>${announcement.views || 0}</td>

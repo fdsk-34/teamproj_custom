@@ -79,7 +79,7 @@
             localStorage.removeItem('cart');
             cart = [];
             updateCart();
-            window.location.href = './07_teamproj_order_page.html';
+            window.location.href = './order_page.html';
         }
 
         document.querySelector('.cart-icon').addEventListener('click', openModal);

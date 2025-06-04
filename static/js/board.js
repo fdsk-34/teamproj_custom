@@ -28,7 +28,7 @@ function displayPosts(filteredPosts = posts) {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${start + index + 1}</td>
-            <td><a href="07_teamproj_board_view.html?id=${encodeURIComponent(post.id)}">${post.title}</a></td>
+            <td><a href="board_view.html?id=${encodeURIComponent(post.id)}">${post.title}</a></td>
             <td>${post.author}</td>
             <td>${new Date(post.createdAt).toLocaleDateString('ko-KR')}</td>
             <td>${post.views || 0}</td>
@@ -129,12 +129,12 @@ function savePost() {
     posts.unshift(post);
     localStorage.setItem('posts', JSON.stringify(posts));
     alert('게시글이 작성되었습니다.');
-    location.href = '07_teamproj_board.html';
+    location.href = 'board.html';
 }
 
 // 글쓰기 취소
 function cancelWrite() {
-    location.href = '07_teamproj_board.html';
+    location.href = 'board.html';
 }
 
 // 초기 게시글 표시
