@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>메뉴 | 수제커피브루</title>
+  <!-- 공통/헤더/인덱스/푸터/이른아침 CSS -->
+  <link rel="stylesheet" href="../static/css/common.css" />
+  <link rel="stylesheet" href="../static/css/header.css" />
+  <link rel="stylesheet" href="../static/css/index.css" />
+  <link rel="stylesheet" href="../static/css/footer.css" />
+  <link rel="stylesheet" href="../static/css/orderform.css" />
+  <style>
+   
+  </style>
+</head>
+
+<body>
+  <!-- ───────────────────────────────────────────────────────────────────────── -->
+  <!--                          상단 헤더 / 네비게이션                            -->
+  <!-- ───────────────────────────────────────────────────────────────────────── -->
+  <header>
+    <div class="header-inner">
+      <h1>이른 아침</h1>
+    
+   <nav>
+        
+        <a href="./early_morning_coffee.html">아침을 여는 이야기</a>
+        <a href="./submenu.html">원두/생두</a>
+        <a href="./goods_order.html">과일/시럽</a>
+        <a href="./etc_order.html">커피용품</a>
+        <a href="./coffebeen_order.html">기타용품</a>
+        <a href="./findstore.html">매장 찾기</a>
+      </nav>
+
+      <div class="top-right-menu">
+        <a href="./login.html">로그인</a>
+        <span class="divider">|</span>
+        <a href="./order_tracking.html">주문조회</a>
+        <span class="divider">|</span>
+        <span class="divider">|</span>
+    <a href="./cart.html">장바구니🛒</a>
+        <a href="./dlivery.html">배송현황</a>
+      </div>
+    </div>
+  </header>
+  <h1 class="main-title">Coffee Equipment</h1>
+
+  <!-- ───────────────────────────────────────────────────────────────────────── -->
+  <!--                               상품 카드 그리드                             -->
+  <!-- ───────────────────────────────────────────────────────────────────────── -->
+  <main class="card-grid">
+    <!-- 카드 1 -->
+    <div class="card" data-name="핸드드립 세트" data-price="39000" data-img="img/handdrip_set.jpg">
+      <img src="img/handdrip_set.jpg" alt="핸드드립 세트" />
+      <div class="card-desc">
+        <h3>핸드드립 세트</h3>
+        <p>₩39,000</p>
+        <button class="add-to-cart">구매하기</button>
+      </div>
+    </div>
+
+    <!-- 카드 2 -->
+    <div class="card" data-name="수동 커피 그라인더" data-price="45000" data-img="img/manual_grinder.jpg">
+      <img src="img/manual_grinder.jpg" alt="수동 커피 그라인더" />
+      <div class="card-desc">
+        <h3>수동 커피 그라인더</h3>
+        <p>₩45,000</p>
+        <button class="add-to-cart">구매하기</button>
+      </div>
+    </div>
+
+    <!-- 카드 3 -->
+    <div class="card" data-name="전동 커피 그라인더" data-price="99000" data-img="img/electric_grinder.jpg">
+      <img src="img/electric_grinder.jpg" alt="전동 커피 그라인더" />
+      <div class="card-desc">
+        <h3>전동 커피 그라인더</h3>
+        <p>₩99,000</p>
+        <button class="add-to-cart">구매하기</button>
+      </div>
+    </div>
+
+    <!-- 카드 4 -->
+    <div class="card" data-name="커피 탬퍼" data-price="28000" data-img="img/coffee_tamper.jpg">
+      <img src="img/coffee_tamper.jpg" alt="커피 탬퍼" />
+      <div class="card-desc">
+        <h3>커피 탬퍼</h3>
+        <p>₩28,000</p>
+        <button class="add-to-cart">구매하기</button>
+      </div>
+    </div>
+
+    <!-- 카드 5 -->
+    <div class="card" data-name="탬퍼 매트" data-price="12000" data-img="img/tamper_mat.jpg">
+      <img src="img/tamper_mat.jpg" alt="탬퍼 매트" />
+      <div class="card-desc">
+        <h3>탬퍼 매트</h3>
+        <p>₩12,000</p>
+        <button class="add-to-cart">구매하기</button>
+      </div>
+    </div>
+
+    <!-- 카드 6 -->
+    <div class="card" data-name="레벨링 툴" data-price="23000" data-img="img/leveling_tool.jpg">
+      <img src="img/leveling_tool.jpg" alt="레벨링 툴" />
+      <div class="card-desc">
+        <h3>레벨링 툴</h3>
+        <p>₩23,000</p>
+        <button class="add-to-cart">구매하기</button>
+      </div>
+    </div>
+
+    <!-- 카드 7 -->
+    <div class="card" data-name="탬퍼 스탠드" data-price="18000" data-img="img/tamper_stand.jpg">
+      <img src="img/tamper_stand.jpg" alt="탬퍼 스탠드" />
+      <div class="card-desc">
+        <h3>탬퍼 스탠드</h3>
+        <p>₩18,000</p>
+        <button class="add-to-cart">구매하기</button>
+      </div>
+    </div>
+
+    <!-- 카드 8 -->
+    <div class="card" data-name="밀크 저그" data-price="25000" data-img="img/milk_jug.jpg">
+      <img src="img/milk_jug.jpg" alt="밀크 저그" />
+      <div class="card-desc">
+        <h3>밀크 저그</h3>
+        <p>₩25,000</p>
+        <button class="add-to-cart">구매하기</button>
+      </div>
+    </div>
+
+    <!-- 카드 9 -->
+    <div class="card" data-name="디지털 저울 & 타이머" data-price="32000" data-img="img/scale_timer.jpg">
+      <img src="img/scale_timer.jpg" alt="디지털 저울 & 타이머" />
+      <div class="card-desc">
+        <h3>디지털 저울 & 타이머</h3>
+        <p>₩32,000</p>
+        <button class="add-to-cart">구매하기</button>
+      </div>
+    </div>
+
+    <!-- 카드 10 -->
+    <div class="card" data-name="노크 박스" data-price="21000" data-img="img/knock_box.jpg">
+      <img src="img/knock_box.jpg" alt="노크 박스" />
+      <div class="card-desc">
+        <h3>노크 박스</h3>
+        <p>₩21,000</p>
+        <button class="add-to-cart">구매하기</button>
+      </div>
+    </div>
+
+    <!-- 카드 11 -->
+    <div class="card" data-name="드립 전용 주전자" data-price="41000" data-img="img/water_kettle.jpg">
+      <img src="img/water_kettle.jpg" alt="드립 전용 주전자" />
+      <div class="card-desc">
+        <h3>드립 전용 주전자</h3>
+        <p>₩41,000</p>
+        <button class="add-to-cart">구매하기</button>
+      </div>
+    </div>
+
+    <!-- 카드 12 -->
+    <div class="card" data-name="원두 보관용 캐니스터" data-price="27000" data-img="img/coffee_canister.jpg">
+      <img src="img/coffee_canister.jpg" alt="원두 보관용 캐니스터" />
+      <div class="card-desc">
+        <h3>원두 보관용 캐니스터</h3>
+        <p>₩27,000</p>
+        <button class="add-to-cart">구매하기</button>
+      </div>
+    </div>
+
+    <!-- 카드 13 -->
+    <div class="card" data-name="필터 홀더" data-price="15000" data-img="img/filter_holder.jpg">
+      <img src="img/filter_holder.jpg" alt="필터 홀더" />
+      <div class="card-desc">
+        <h3>필터 홀더</h3>
+        <p>₩15,000</p>
+        <button class="add-to-cart">구매하기</button>
+      </div>
+    </div>
+
+    <!-- 카드 14 -->
+    <div class="card" data-name="브러시 클리너" data-price="11000" data-img="img/brush_cleaner.jpg">
+      <img src="img/brush_cleaner.jpg" alt="브러시 클리너" />
+      <div class="card-desc">
+        <h3>브러시 클리너</h3>
+        <p>₩11,000</p>
+        <button class="add-to-cart">구매하기</button>
+      </div>
+    </div>
+
+    <!-- 카드 15 -->
+    <div class="card" data-name="드립 스테이션" data-price="35000" data-img="img/drip_station.jpg">
+      <img src="img/drip_station.jpg" alt="드립 스테이션" />
+      <div class="card-desc">
+        <h3>드립 스테이션</h3>
+        <p>₩35,000</p>
+        <button class="add-to-cart">구매하기</button>
+      </div>
+    </div>
+
+    <!-- 카드 16 -->
+    <div class="card" data-name="커피 트레이" data-price="19000" data-img="img/coffee_tray.jpg">
+      <img src="img/coffee_tray.jpg" alt="커피 트레이" />
+      <div class="card-desc">
+        <h3>커피 트레이</h3>
+        <p>₩19,000</p>
+        <button class="add-to-cart">구매하기</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 이른아침커피</p>
+  </footer>
+
+  <!-- ───────────────────────────────────────────────────────────────────────── -->
+  <!--                           장바구니 담기 기능용 JS                             -->
+  <!-- ───────────────────────────────────────────────────────────────────────── -->
+  <script src="../static/js/cart.js">   
+  </script>
+</body>
+</html>

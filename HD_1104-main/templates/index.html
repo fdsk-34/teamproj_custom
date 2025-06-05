@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>수제커피브루 - 홈</title>
+  <link rel="stylesheet" href="../static/css/common.css" />
+  <link rel="stylesheet" href="../static/css/header.css" />
+  <link rel="stylesheet" href="../static/css/index.css" />
+  <link rel="stylesheet" href="../static/css/footer.css" />
+  <link rel="stylesheet" href="../static\css\early.css"/>
+ <link rel="stylesheet"  href="../static\css\goodsorder.css"
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>이른 아침</h1>
+
+      <nav>
+        
+        <a href="./early_morning_coffee.html">아침을 여는 이야기</a>
+        <a href="./submenu.html">원두/생두</a>
+        <a href="./goods_order.html">과일/시럽</a>
+        <a href="./etc_order.html">커피용품</a>
+        <a href="./coffebeen_order.html">기타용품</a>
+        <a href="./findstore.html">매장 찾기</a>
+      </nav>
+
+      <div class="top-right-menu">
+        <a href="./login.html">로그인</a>
+        <span class="divider">|</span>
+        <a href="./order_tracking.html">주문조회</a>
+        <span class="divider">|</span>
+        <span class="divider">|</span>
+    <a href="./cart.html">장바구니🛒</a>
+        <a href="./dlivery.html">배송현황</a>
+      </div>
+    </div>
+  </header>
+
+      </nav>
+    </div>
+  </header>
+<!-- ✅ 본문 중간에 슬라이드 추가 -->
+<div class="slider_position">
+  <div class="slider-wrapper">
+    <div class="slider" id="slider">
+      
+      <img src="img/greenbean.png" alt="슬라이드1" />
+    
+      <img src="img/greenbean.png2.png" alt="슬라이드2" />
+    
+     <img src="img/Outin.png" alt="슬라이드3" />
+
+      <img src="img/unlux.png" alt="슬라이드4" />
+      <img src="img/unspecialty.jpeg" alt="슬라이드5" />
+      <img src="img/test-0528-(14).jpg" alt="슬라이드6" />
+    </div>
+  </div>
+
+  <div id="sliderDots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</div>
+
+  <main class="card-grid">
+    <div class="card">
+      <div class="card-label">커피원픽</div>
+      <img src="img/coffee1.jpg" alt="헤베커피" />
+      <p class="card-desc">[6월 커피 원픽] 헤베커피 (6/1 ~ 6/30)</p>
+    </div>
+    <div class="card">
+      <div class="card-label">커피원픽</div>
+      <img src="img/coffee2.jpg" alt="언럭스 세트" />
+      <p class="card-desc">[unlux] 에티오피아 시다마 알로 타미루 드립백 세트 (8개입)</p>
+    </div>
+    <div class="card">
+      <div class="card-label">머신원픽</div>
+      <img src="img/machine1.jpg" alt="아우틴 나노" />
+      <p class="card-desc">[6월 머신 원픽] 아우틴 나노 (6/1~6/30)</p>
+    </div>
+    <div class="card">
+      <div class="card-label">머신원픽</div>
+      <img src="img/machine2.jpg" alt="스테드패스트" />
+      <p class="card-desc">[6월 머신 원픽] 스테드패스트 (6/1~6/30)</p>
+    </div>
+    <div class="card">
+      <div class="card-label">커피생두</div>
+      <img src="img/green1.jpg" alt="에티오피아 생두" />
+      <p class="card-desc">[커피 생두] 에티오피아 알로 타미루 미리카 74158 내추럴</p>
+    </div>
+    <div class="card">
+      <div class="card-label">커피생두</div>
+      <img src="img/green2.jpg" alt="블랙문팜" />
+      <p class="card-desc">[커피 생두] 파나마 블랙 문 2024 BoP 옥션 랏</p>
+    </div>
+     <div class="card">
+      <div class="card-label">커피원픽</div>
+      <img src="img/coffee1.jpg" alt="헤베커피" />
+      <p class="card-desc">[6월 커피 원픽] 헤베커피 (6/1 ~ 6/30)</p>
+    </div>
+    
+  </main>
+
+
+  <!-- ✅ 슬라이드 작동 스크립트 -->
+  <script>
+    const slider = document.getElementById("slider");
+    const dots = document.querySelectorAll(".dot");
+    let index = 0;
+    const total = dots.length;
+
+    function showSlide(i) {
+      const slideWidth = slider.clientWidth;
+      slider.scrollTo({ left: i * slideWidth, behavior: "smooth" });
+      dots.forEach(dot => dot.classList.remove("active"));
+      dots[i].classList.add("active");
+    }
+
+    function nextSlide() {
+      index = (index + 1) % total;
+      showSlide(index);
+    }
+
+    function prevSlide() {
+      index = (index - 1 + total) % total;
+      showSlide(index);
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        index = i;
+        showSlide(index);
+      });
+    });
+
+    setInterval(nextSlide, 3000);
+  </script>
+
+
+  <!-- ───────────────────────────────────────────────────────────────────────── -->
+  <!--                                  푸터 영역                                  -->
+  <!-- ───────────────────────────────────────────────────────────────────────── -->
+  <footer>
+    <p>© 2025 수제커피브루 | 경기도 커피시 향기구 아라비카로 100</p>
+  </footer>
+</body>
+</html>
+
+
+
+</body>
+</html>

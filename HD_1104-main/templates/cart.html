@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>장바구니 | 수제커피브루</title>
+
+  <!-- 공통/헤더/인덱스/푸터/어린아침 CSS -->
+  <link rel="stylesheet" href="../static/css/common.css" />
+  <link rel="stylesheet" href="../static/css/header.css" />
+  <link rel="stylesheet" href="../static/css/index.css" />
+  <link rel="stylesheet" href="../static/css/footer.css" />
+  <link rel="stylesheet" href="../static/css/early.css" />
+
+  <!-- 장바구니 전용 스타일 -->
+  <link rel="stylesheet" href="../static/css/cart.css" />
+</head>
+
+<body>
+  <!-- ───────────────────────────────────────────────────────────────────────── -->
+  <!--                              상단 헤더 / 네비게이션                            -->
+  <!-- ───────────────────────────────────────────────────────────────────────── -->
+  <header>
+    <div class="header-inner">
+      <h1>이른 아침</h1>
+
+      <nav>
+        <a href="./Early_Morning_Coffee.html">회사소개</a>
+        <a href="./submenu.html">원두/생두</a>
+        <a href="./goods_order.html">과일/시럽</a>
+        <a href="./etc_order.html">커피용품</a>
+        <a href="./coffebeen_order.html">기타용품</a>
+        <a href="./findstore.html">매장 찾기</a>
+      </nav>
+
+      <div class="top-right-menu">
+        <a href="./login.html">로그인</a>
+        <span class="divider">|</span>
+        <a href="./orde_tracking.html">주문조회</a>
+        <span class="divider">|</span>
+        <a href="./cart.html">장바구니🛒</a>
+        <span class="divider">|</span>
+        <a href="./dlivery.html">배송현황</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ───────────────────────────────────────────────────────────────────────── -->
+  <!--                                장바구니 페이지                                 -->
+  <!-- ───────────────────────────────────────────────────────────────────────── -->
+  <section class="cart-page-wrapper">
+    <h2 class="section-title">🛒 나의 장바구니</h2>
+
+    <main class="cart-container">
+      <p class="empty-cart-msg">장바구니에 담긴 상품이 없습니다.</p>
+      <div id="cart-items"></div>
+
+      <div class="cart-summary">
+        <p>총 합계: <strong id="total-price">₩0</strong></p>
+        <button class="checkout" id="checkout-btn">💳 결제하기</button>
+      </div>
+    </main>
+  </section>
+
+  <!-- ──              -->
+<!-- ───────────────────────────────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <p>© 2025 이른아침 커피브루 | 경기도 커피시 향기구 아라비카로 100</p>
+</footer>
+
+  <!-- ───────────────────────────────────────────────────────────────────────── -->
+  <!--                            장바구니 기능용 JS                                 -->
+  <!-- ───────────────────────────────────────────────────────────────────────── -->
+  <script>
+    const CART_KEY = 'shoppingCart';
+
+    function loadCart() {
+      const data = localStorage.getItem(CART_KEY);
+      return data ? JSON.parse(data) : [];
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    }
+
+    function renderCart() {
+      const cartItemsDiv = document.getElementById('cart-items');
+      const emptyMsg = document.querySelector('.empty-cart-msg');
+      const cart = loadCart();
+
+      if (cart.length === 0) {
+        emptyMsg.style.display = 'block';
+        cartItemsDiv.innerHTML = '';
+        updateTotal();
+        return;
+      } else {
+        emptyMsg.style.display = 'none';
+      }
+
+      cartItemsDiv.innerHTML = '';
+      cart.forEach((item, index) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'cart-item';
+        itemDiv.dataset.price = item.price;
+
+        itemDiv.innerHTML = `
+          <img src="${item.img}" alt="${item.name}">
+          <div class="item-info">
+            <h3>${item.name}</h3>
+            <p class="price">₩${item.price.toLocaleString()}</p>
+            <div class="quantity">
+              <button class="minus" data-index="${index}">-</button>
+              <input type="number" value="${item.qty}" min="1" readonly>
+              <button class="plus" data-index="${index}">+</button>
+            </div>
+          </div>
+          <button class="remove" data-index="${index}">삭제</button>
+        `;
+        cartItemsDiv.appendChild(itemDiv);
+      });
+
+      document.querySelectorAll('.cart-item .plus').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = parseInt(btn.dataset.index, 10);
+          changeQuantity(idx, +1);
+        });
+      });
+
+      document.querySelectorAll('.cart-item .minus').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = parseInt(btn.dataset.index, 10);
+          changeQuantity(idx, -1);
+        });
+      });
+
+      document.querySelectorAll('.cart-item .remove').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = parseInt(btn.dataset.index, 10);
+          removeItem(idx);
+        });
+      });
+
+      updateTotal();
+    }
+
+    function changeQuantity(index, delta) {
+      const cart = loadCart();
+      cart[index].qty = Math.max(1, cart[index].qty + delta);
+      saveCart(cart);
+      renderCart();
+    }
+
+    function removeItem(index) {
+      const cart = loadCart();
+      cart.splice(index, 1);
+      saveCart(cart);
+      renderCart();
+    }
+
+    function updateTotal() {
+      const totalPriceElem = document.getElementById('total-price');
+      const cart = loadCart();
+      let total = 0;
+      cart.forEach(item => {
+        total += item.price * item.qty;
+      });
+      totalPriceElem.textContent = `₩${total.toLocaleString()}`;
+    }
+
+    document.getElementById('checkout-btn').addEventListener('click', () => {
+      window.location.href = 'payment.html';
+    });
+
+    renderCart();
+  </script>
+</body>
+</html>

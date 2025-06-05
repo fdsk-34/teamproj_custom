@@ -1,0 +1,63 @@
+.menu-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.menu-title {
+    text-align: center;
+    color: #2d4739;
+    margin-bottom: 40px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.menu-card,
+.menu-card2 {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+
+
+.menu-card:hover,
+.menu-card2:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.menu-card img,
+.menu-card2 img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.menu-card h3 {
+    margin: 0 0 10px;
+    color: #719CED;
+}
+
+.menu-card2 h3 {
+    margin: 0 0 10px;
+    color: red;
+}
+
+.menu-card p,
+.menu-card2 p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+}

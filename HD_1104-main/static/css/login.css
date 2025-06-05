@@ -1,0 +1,220 @@
+/* ===========================================================
+   login.css
+   이른아침커피브루 로그인 페이지 전용 스타일
+   (header.css, common.css, index.css와 함께 사용)
+   =========================================================== */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   바디/기본 설정
+───────────────────────────────────────────────────────────────────────── */
+body {
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   로그인 화면 전체 컨테이너
+   - 푸터 높이(약 60px) 제외한 높이만큼 세로 중앙 정렬
+───────────────────────────────────────────────────────────────────────── */
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 60px);
+  padding-bottom: 60px; /* 푸터 높이 확보 */
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   로그인 카드 박스
+   - 흰색 배경, 둥근 모서리, 그림자 효과
+   - 최대 너비 360px, 내부 여백 확보
+───────────────────────────────────────────────────────────────────────── */
+.login-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 360px;
+  padding: 40px 24px;
+  box-sizing: border-box;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   로고 영역: 텍스트 "이른아침"
+───────────────────────────────────────────────────────────────────────── */
+.logo-container {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.logo-text {
+  font-size: 2rem;               /* 큰 글씨로 강조 */
+  font-weight: bold;
+  color: #3E2723;                /* 다크 브라운 텍스트 */
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   로그인 폼 제목 스타일
+───────────────────────────────────────────────────────────────────────── */
+#login-form h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #3E2723; /* 다크 브라운 텍스트 */
+  margin-bottom: 28px;
+  font-weight: bold;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   입력 그룹 (label + input)
+───────────────────────────────────────────────────────────────────────── */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.95rem;
+  color: #5D4037; /* 진한 갈색 계열 */
+  margin-bottom: 6px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #3E2723;
+  box-shadow: 0 0 4px rgba(62, 39, 35, 0.2);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   로그인 버튼 스타일
+───────────────────────────────────────────────────────────────────────── */
+#login-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  background-color: #3E2723; /* 다크 브라운 배경 */
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 8px;
+}
+
+#login-btn:hover {
+  background-color: #5D4037; /* 연한 브라운으로 변경 */
+  transform: translateY(-2px);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   하단 링크 (아이디/비밀번호 찾기, 회원 가입)
+───────────────────────────────────────────────────────────────────────── */
+.links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  font-size: 0.85rem;
+}
+
+.links a {
+  color: #3E2723; /* 다크 브라운 */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #FF7043; /* 오렌지 강조 */
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   로그인 확인 메시지 영역 (success, error 클래스)
+───────────────────────────────────────────────────────────────────────── */
+#login-confirm {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+#login-confirm.success {
+  background-color: #d4edda; /* 연한 초록 배경 */
+  color: #155724; /* 진한 초록 텍스트 */
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#login-confirm.error {
+  background-color: #f8d7da; /* 연한 빨강 배경 */
+  color: #721c24; /* 진한 빨강 텍스트 */
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   반응형: 화면 너비 480px 이하일 때 스타일 조정
+───────────────────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 32px 16px;
+    margin: 0 12px;
+  }
+
+  #login-form h2 {
+    font-size: 1.6rem;
+  }
+
+  .input-group input {
+    padding: 8px 10px;
+  }
+
+  #login-btn {
+    font-size: 0.95rem;
+    padding: 10px 0;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+/* =============================================================
+   footer.css
+   페이지 콘텐츠 아래에 위치하는 일반 푸터 스타일
+   (스크롤하여 올릴 때 푸터는 움직이지 않음)
+   ============================================================= */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   푸터 기본 스타일
+───────────────────────────────────────────────────────────────────────── */
+footer {
+  background-color: #3E2723; /* 다크 브라운 배경 */
+  color: #ffffff;            /* 흰색 텍스트 */
+  text-align: center;        /* 중앙 정렬 */
+  padding: 16px 0;           /* 상하 패딩 */
+  font-size: 0.9rem;         /* 폰트 크기 */
+  width: 100%;               /* 가로 전체 너비 차지 */
+  box-sizing: border-box;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   본문과 푸터가 겹치지 않도록 메인 컨테이너에 여백 추가
+───────────────────────────────────────────────────────────────────────── */
+.login-wrapper {
+  margin-bottom: 40px; /* 필요에 따라 조절 */
+}

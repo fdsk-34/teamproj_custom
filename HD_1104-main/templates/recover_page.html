@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디/비밀번호 찾기 | 수제커피 이른 아침</title>
+ 
+  <link rel="stylesheet" href="../static/css/common.css" />
+  <link rel="stylesheet" href="../static/css/header.css" />
+  <link rel="stylesheet" href="../static/css/index.css" />
+  <link rel="stylesheet" href="../static/css/footer.css" />
+  <link rel="stylesheet" href="../static\css\early.css"/>
+ <link rel="stylesheet"  href="../static\css\goodsorder.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>이른 아침</h1>
+
+      <nav>
+        
+        <a href="./early_morning_coffee.html">아침을 여는 이야기</a>
+        <a href="./submenu.html">원두/생두</a>
+        <a href="./goods_order.html">과일/시럽</a>
+        <a href="./etc_order.html">커피용품</a>
+        <a href="./coffebeen_order.html">기타용품</a>
+        <a href="./findstore.html">매장 찾기</a>
+      </nav>
+
+      <div class="top-right-menu">
+        <a href="./login.html">로그인</a>
+        <span class="divider">|</span>
+        <a href="./order_tracking.html">주문조회</a>
+        <span class="divider">|</span>
+        <span class="divider">|</span>
+    <a href="./cart.html">장바구니🛒</a>
+        <a href="./dlivery.html">배송현황</a>
+      </div>
+    </div>
+  </header>
+
+
+    <main class="container">
+        <div class="image-container">
+            <img src="https://via.placeholder.com/400x150?text=Cafe+Logo" alt="Cafe Logo">
+        </div>
+        <div class="recover-form">
+            <h2>아이디/비밀번호 찾기</h2>
+            <div class="form-group">
+                <label for="name">이름</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">연락처</label>
+                <input type="tel" id="phone" placeholder="010-1234-5678" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required>
+            </div>
+            <button class="btn" onclick="recoverAccount()">아이디/비밀번호 찾기</button>
+            <p><a href="./07_teamproj_login.html">로그인 페이지로 돌아가기</a></p>
+        </div>
+        <div class="recover-result" id="recoverResult"></div>
+    </main>
+
+    <footer>
+       © 2025 이른아침커피브루 | 경기도 커피시 향기구 아라비카로 100
+    </footer>
+
+    
+    <script src="../static/js/recover.js"></script>
+</body>
+</html>

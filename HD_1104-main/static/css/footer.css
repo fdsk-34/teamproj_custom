@@ -1,0 +1,10 @@
+/* ─── 일반 푸터 (스크롤로 보이게, 아래 여백 없음) ───────────── */
+footer {
+  background-color: #3E2723; /* 기존 다크 브라운 유지 */
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0;  /* ✅ 아래 여백 제거 */
+}

@@ -1,0 +1,37 @@
+.about-us {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #fcf9f5;
+  border-left: 8px solid #3E2723;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #333;
+  line-height: 1.9;
+  font-size: 1rem;
+}
+
+.about-us h2 {
+  font-size: 2rem;
+  color: #3E2723;
+  margin-bottom: 25px;
+}
+
+.about-us p {
+  margin-bottom: 1.5em;
+}
+
+.about-us ul {
+  margin: 0 0 1.5em 1.5em;
+  padding-left: 20px;
+  list-style: disc;
+  color: #555;
+}
+
+.about-us em {
+  display: block;
+  margin-top: 30px;
+  font-style: italic;
+  color: #5D4037;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
