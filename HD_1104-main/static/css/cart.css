@@ -281,11 +281,13 @@ header h1 {
 }
 
 /* ─── 푸터 ─────────────────────────── */
-footer {
-  background: #eeeeee;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 40px;
-}
+ footer {
+      background-color: #3E2723;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    

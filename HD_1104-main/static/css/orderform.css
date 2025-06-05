@@ -1,9 +1,10 @@
  body {
       font-family: 'Noto Sans KR', sans-serif;
-      background-color: #fefefe;
+      background-color: #f7f2eb;
       color: #333;
       margin: 0;
       padding: 0;
+      z-index: -1000;
     }
 
     .main-title {
@@ -23,7 +24,7 @@
     }
 
     .card {
-      background-color: #fff;
+      background-color: #c4ae4d5d;
       border: 1px solid #ddd;
       border-radius: 12px;
       overflow: hidden;
@@ -34,7 +35,8 @@
 
     .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      border:0.5px solid #3E2723;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     }
 
     .card img {
@@ -42,6 +44,11 @@
       height: 200px;
       
       display: block;
+    }
+    .card strong {
+      color: rgba(7, 7, 252, 0.349);
+      text-transform: capitalize;
+      font-size: larger;
     }
 
     .card-desc {
@@ -53,6 +60,11 @@
     .card-desc h3 {
       font-size: 1.2rem;
       color: #5D4037;
+      margin-bottom: 10px;
+    }
+     .card h5 {
+      font-size: 1.1rem;
+      color: #ff9900;
       margin-bottom: 10px;
     }
 
