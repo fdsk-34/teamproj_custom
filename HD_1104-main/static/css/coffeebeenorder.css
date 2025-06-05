@@ -1,38 +1,11 @@
-/* ───────────────────────────────────────────────────────────────────────── */
-/*                          헤더(Header) 스타일                                */
-/* ───────────────────────────────────────────────────────────────────────── */
-header {
-  background-color: #3E2723; /* 다크 브라운 배경 */
-  color: #ffffff;
-  padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header-inner h1 {
-  font-size: 1.8rem;
+.card h3{
+  color:rgba(7, 7, 252, 0.349);
+  font-size: large;
   font-weight: bold;
-  letter-spacing: 1px;
-  color: #ffffff;
-  margin: 0;
 }
 
-/* 네비게이션 링크 */
-header nav {
-  display: flex;
-  gap: 1.5rem;
-}
-
-header nav a {
-  font-size: 1rem;
-  color: #ffffff;
-  transition: color 0.2s;
+.card p {
+  color: #ff9900;
+  font-size: large;  
+  font-weight: bold;
 }
